@@ -1,0 +1,233 @@
+\begin{theindex}
+
+  \item {CCW}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{21}
+  \item {countLeft}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{28}
+  \item {countRight}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{28}
+  \item {currentMotion}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{29}
+  \item {CW}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{22}
+
+  \indexspace
+
+  \item {decider}
+    \subitem {decider.ino}, \hyperpage{5}
+  \item {decider.ino}, \hyperpage{5}
+    \subitem {decider}, \hyperpage{5}
+    \subitem {moveBackward}, \hyperpage{7}
+    \subitem {moveForward}, \hyperpage{7}
+    \subitem {turnLeft}, \hyperpage{8}
+    \subitem {turnRight}, \hyperpage{8}
+
+  \indexspace
+
+  \item {encoder\_L\_C1}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{22}
+  \item {encoder\_R\_C1}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{22}
+  \item {encoderFunctions.ino}, \hyperpage{9}
+    \subitem {encoderLeft}, \hyperpage{9}
+    \subitem {encoderRight}, \hyperpage{9}
+  \item {encoderLeft}
+    \subitem {encoderFunctions.ino}, \hyperpage{9}
+  \item {encoderRight}
+    \subitem {encoderFunctions.ino}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Front}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{22}
+
+  \indexspace
+
+  \item {headMotion\_predefined}
+    \subitem {headMovement.ino}, \hyperpage{10}
+  \item {headMovement.ino}, \hyperpage{10}
+    \subitem {headMotion\_predefined}, \hyperpage{10}
+    \subitem {movehead}, \hyperpage{11}
+
+  \indexspace
+
+  \item {inputString}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{29}
+
+  \indexspace
+
+  \item {KD}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{22}
+  \item {KI}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{23}
+  \item {KP}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Left}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{23}
+  \item {leftPID}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{29}
+  \item {loop}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{27}
+
+  \indexspace
+
+  \item {maxpitchlimit}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{23}
+  \item {maxyawlimit}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{23}
+  \item {minpitchlimit}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{24}
+  \item {minyawlimit}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{24}
+  \item {motionText}
+    \subitem {printStatus.ino}, \hyperpage{16}
+  \item {motor}
+    \subitem {move\_Direction.ino}, \hyperpage{12}
+  \item {motor\_ENA}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{24}
+  \item {motor\_ENB}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{24}
+  \item {motor\_IN1}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{24}
+  \item {motor\_IN2}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{25}
+  \item {motor\_IN3}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{25}
+  \item {motor\_IN4}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{25}
+  \item {move\_Direction.ino}, \hyperpage{12}
+    \subitem {motor}, \hyperpage{12}
+    \subitem {moveDirection}, \hyperpage{13}
+  \item {moveBackward}
+    \subitem {decider.ino}, \hyperpage{7}
+  \item {moveDirection}
+    \subitem {move\_Direction.ino}, \hyperpage{13}
+  \item {moveForward}
+    \subitem {decider.ino}, \hyperpage{7}
+  \item {movehead}
+    \subitem {headMovement.ino}, \hyperpage{11}
+
+  \indexspace
+
+  \item {PID\_initial}
+    \subitem {PID\_Initial.ino}, \hyperpage{15}
+  \item {PID\_Initial.ino}, \hyperpage{15}
+    \subitem {PID\_initial}, \hyperpage{15}
+  \item {pitchservo}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{30}
+  \item {printStatus}
+    \subitem {printStatus.ino}, \hyperpage{17}
+  \item {printStatus.ino}, \hyperpage{16}
+    \subitem {motionText}, \hyperpage{16}
+    \subitem {printStatus}, \hyperpage{17}
+  \item {pwmLeft}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{30}
+  \item {pwmRight}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{30}
+
+  \indexspace
+
+  \item {README.md}, \hyperpage{18}
+  \item {Rear}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{25}
+  \item {Right}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{25}
+  \item {rightPID}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{30}
+  \item {robot\_speed\_max}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{26}
+  \item {robot\_speed\_min}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{26}
+
+  \indexspace
+
+  \item {serialEvent}
+    \subitem {serialEvent.ino}, \hyperpage{18}
+  \item {serialEvent.ino}, \hyperpage{18}
+    \subitem {serialEvent}, \hyperpage{18}
+    \subitem {serialEvent2}, \hyperpage{18}
+  \item {serialEvent2}
+    \subitem {serialEvent.ino}, \hyperpage{18}
+  \item {servoPitchCenter}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{26}
+  \item {servoPitchPin}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{26}
+  \item {servoYawCenter}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{26}
+  \item {servoYawPin}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{27}
+  \item {setup}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{28}
+  \item {Start}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{27}
+  \item {stepsMotion}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{31}
+  \item {stepsOverall}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{31}
+  \item {Stop}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{27}
+  \item {stopMotion}
+    \subitem {stopMotion.ino}, \hyperpage{19}
+  \item {stopMotion.ino}, \hyperpage{19}
+    \subitem {stopMotion}, \hyperpage{19}
+
+  \indexspace
+
+  \item {TDF02-\/145\_Arduino.ino}, \hyperpage{20}
+    \subitem {CCW}, \hyperpage{21}
+    \subitem {countLeft}, \hyperpage{28}
+    \subitem {countRight}, \hyperpage{28}
+    \subitem {currentMotion}, \hyperpage{29}
+    \subitem {CW}, \hyperpage{22}
+    \subitem {encoder\_L\_C1}, \hyperpage{22}
+    \subitem {encoder\_R\_C1}, \hyperpage{22}
+    \subitem {Front}, \hyperpage{22}
+    \subitem {inputString}, \hyperpage{29}
+    \subitem {KD}, \hyperpage{22}
+    \subitem {KI}, \hyperpage{23}
+    \subitem {KP}, \hyperpage{23}
+    \subitem {Left}, \hyperpage{23}
+    \subitem {leftPID}, \hyperpage{29}
+    \subitem {loop}, \hyperpage{27}
+    \subitem {maxpitchlimit}, \hyperpage{23}
+    \subitem {maxyawlimit}, \hyperpage{23}
+    \subitem {minpitchlimit}, \hyperpage{24}
+    \subitem {minyawlimit}, \hyperpage{24}
+    \subitem {motor\_ENA}, \hyperpage{24}
+    \subitem {motor\_ENB}, \hyperpage{24}
+    \subitem {motor\_IN1}, \hyperpage{24}
+    \subitem {motor\_IN2}, \hyperpage{25}
+    \subitem {motor\_IN3}, \hyperpage{25}
+    \subitem {motor\_IN4}, \hyperpage{25}
+    \subitem {pitchservo}, \hyperpage{30}
+    \subitem {pwmLeft}, \hyperpage{30}
+    \subitem {pwmRight}, \hyperpage{30}
+    \subitem {Rear}, \hyperpage{25}
+    \subitem {Right}, \hyperpage{25}
+    \subitem {rightPID}, \hyperpage{30}
+    \subitem {robot\_speed\_max}, \hyperpage{26}
+    \subitem {robot\_speed\_min}, \hyperpage{26}
+    \subitem {servoPitchCenter}, \hyperpage{26}
+    \subitem {servoPitchPin}, \hyperpage{26}
+    \subitem {servoYawCenter}, \hyperpage{26}
+    \subitem {servoYawPin}, \hyperpage{27}
+    \subitem {setup}, \hyperpage{28}
+    \subitem {Start}, \hyperpage{27}
+    \subitem {stepsMotion}, \hyperpage{31}
+    \subitem {stepsOverall}, \hyperpage{31}
+    \subitem {Stop}, \hyperpage{27}
+    \subitem {yawservo}, \hyperpage{31}
+  \item {turnLeft}
+    \subitem {decider.ino}, \hyperpage{8}
+  \item {turnRight}
+    \subitem {decider.ino}, \hyperpage{8}
+
+  \indexspace
+
+  \item {yawservo}
+    \subitem {TDF02-\/145\_Arduino.ino}, \hyperpage{31}
+
+\end{theindex}

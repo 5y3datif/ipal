@@ -1,0 +1,147 @@
+\hypertarget{a00008}{}\doxysection{head\+Movement.\+ino File Reference}
+\label{a00008}\index{headMovement.ino@{headMovement.ino}}
+
+
+Controls the head.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00008_a1ea6faac4a2d8cd843e26e3648fb99c0}{movehead}} (int yaw, int pitch)
+\begin{DoxyCompactList}\small\item\em Tasked with moving both servos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00008_a56666236724bf6f9c5baf492336b4c71}{head\+Motion\+\_\+predefined}} (char Direction, int Speed, int Duration, int Empty)
+\begin{DoxyCompactList}\small\item\em Predefined head movements (nodding and shaking for some time) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the head. 
+
+Writes angles to the servos in the neck. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00008_a56666236724bf6f9c5baf492336b4c71}\label{a00008_a56666236724bf6f9c5baf492336b4c71}} 
+\index{headMovement.ino@{headMovement.ino}!headMotion\_predefined@{headMotion\_predefined}}
+\index{headMotion\_predefined@{headMotion\_predefined}!headMovement.ino@{headMovement.ino}}
+\doxysubsubsection{\texorpdfstring{headMotion\_predefined()}{headMotion\_predefined()}}
+{\footnotesize\ttfamily void head\+Motion\+\_\+predefined (\begin{DoxyParamCaption}\item[{char}]{Direction,  }\item[{int}]{Speed,  }\item[{int}]{Duration,  }\item[{int}]{Empty }\end{DoxyParamCaption})}
+
+
+
+Predefined head movements (nodding and shaking for some time) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Direction} & Nodding (\textquotesingle{}Y\textquotesingle{}) or shaking (\textquotesingle{}N\textquotesingle{}) \\
+\hline
+{\em Speed} & Speed with which to move the head \\
+\hline
+{\em Duration} & Time in seconds for which to move the head \\
+\hline
+{\em Empty} & Empty parameter. Exists to keep with the format of the input\+String. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file head\+Movement.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43                                                                                \{}
+\DoxyCodeLine{44   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} previousMillis;}
+\DoxyCodeLine{45   \textcolor{keyword}{const} \textcolor{keywordtype}{long} interval = Duration * 1000;}
+\DoxyCodeLine{46   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} currentMillis = millis();}
+\DoxyCodeLine{47   previousMillis = currentMillis;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{// loop based on millis() passed //}}
+\DoxyCodeLine{50   \textcolor{keywordflow}{while} (abs(currentMillis -\/ previousMillis) <= interval) \{}
+\DoxyCodeLine{51     }
+\DoxyCodeLine{52     currentMillis = millis();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{switch} (Direction) \{}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56       \textcolor{keywordflow}{case} \textcolor{charliteral}{'Y'}:}
+\DoxyCodeLine{57         \textcolor{comment}{// nodding //}}
+\DoxyCodeLine{58         \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(\mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servoYawCenter}}, 255, \textcolor{keyword}{true}); \textcolor{comment}{// Takes head to center first //}}
+\DoxyCodeLine{59         \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(\mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servoPitchCenter}} + 25, Speed\textcolor{comment}{/*100 works best*/}, \textcolor{keyword}{true});}
+\DoxyCodeLine{60         delay(500);}
+\DoxyCodeLine{61         \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(\mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servoYawCenter}}, 255, \textcolor{keyword}{true});}
+\DoxyCodeLine{62         \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(\mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servoPitchCenter}} -\/ 25 \textcolor{comment}{/*This number can be changed*/}, Speed, \textcolor{keyword}{true});}
+\DoxyCodeLine{63         delay(500);}
+\DoxyCodeLine{64         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66       \textcolor{keywordflow}{case} \textcolor{charliteral}{'N'}:}
+\DoxyCodeLine{67         \textcolor{comment}{//head shaking}}
+\DoxyCodeLine{68         \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(\mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servoPitchCenter}}, 255, \textcolor{keyword}{true});}
+\DoxyCodeLine{69         \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(\mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servoYawCenter}} + 15, Speed \textcolor{comment}{/*40 works best*/}, \textcolor{keyword}{true});}
+\DoxyCodeLine{70         delay(500);}
+\DoxyCodeLine{71         \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(\mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servoPitchCenter}}, 255, \textcolor{keyword}{true});}
+\DoxyCodeLine{72         \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(\mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servoYawCenter}} -\/ 15  \textcolor{comment}{/*This number can be changed*/}, Speed, \textcolor{keyword}{true});}
+\DoxyCodeLine{73         delay(500);}
+\DoxyCodeLine{74         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     currentMillis = millis();}
+\DoxyCodeLine{78   \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \textcolor{comment}{// Setting it back to center facing //}}
+\DoxyCodeLine{81   \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(\mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servoPitchCenter}}, 255, \textcolor{keyword}{true}); \textcolor{comment}{//pitch = yes, nodding motion}}
+\DoxyCodeLine{82   \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(\mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servoYawCenter}}, 255, \textcolor{keyword}{true}); \textcolor{comment}{//yaw = no, shaking motion}}
+\DoxyCodeLine{83 \}}
+
+\end{DoxyCode}
+
+
+References pitchservo, servo\+Pitch\+Center, servo\+Yaw\+Center, and yawservo.
+
+\mbox{\Hypertarget{a00008_a1ea6faac4a2d8cd843e26e3648fb99c0}\label{a00008_a1ea6faac4a2d8cd843e26e3648fb99c0}} 
+\index{headMovement.ino@{headMovement.ino}!movehead@{movehead}}
+\index{movehead@{movehead}!headMovement.ino@{headMovement.ino}}
+\doxysubsubsection{\texorpdfstring{movehead()}{movehead()}}
+{\footnotesize\ttfamily void movehead (\begin{DoxyParamCaption}\item[{int}]{yaw,  }\item[{int}]{pitch }\end{DoxyParamCaption})}
+
+
+
+Tasked with moving both servos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em yaw} & The yaw angle in degrees extracted in \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider()}} \\
+\hline
+{\em pitch} & The pitch angle in degrees extracted in \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file head\+Movement.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                   \{}
+\DoxyCodeLine{17   \textcolor{keywordflow}{if} (yaw > \mbox{\hyperlink{a00029_a671041972a6f642b0cb6af0ce54909de}{maxyawlimit}})}
+\DoxyCodeLine{18     yaw = \mbox{\hyperlink{a00029_a671041972a6f642b0cb6af0ce54909de}{maxyawlimit}};}
+\DoxyCodeLine{19   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (yaw < \mbox{\hyperlink{a00029_aeec37b2997cce8e574717bb43abeebff}{minyawlimit}})}
+\DoxyCodeLine{20     yaw = \mbox{\hyperlink{a00029_aeec37b2997cce8e574717bb43abeebff}{minyawlimit}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordflow}{if} (pitch > \mbox{\hyperlink{a00029_abdf4dbec227d549c106fdde9ac5f8a71}{maxpitchlimit}})}
+\DoxyCodeLine{23     pitch = \mbox{\hyperlink{a00029_abdf4dbec227d549c106fdde9ac5f8a71}{maxpitchlimit}};}
+\DoxyCodeLine{24   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pitch < \mbox{\hyperlink{a00029_a18ab8e920d1dca913a9076c5f089fbb2}{minpitchlimit}})}
+\DoxyCodeLine{25     pitch = \mbox{\hyperlink{a00029_a18ab8e920d1dca913a9076c5f089fbb2}{minpitchlimit}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{comment}{// Writes the angle to the servo at a "100" speed //}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(pitch, 100\textcolor{comment}{/*, 255, true*/}); \textcolor{comment}{//pitch = yes, nodding motion}}
+\DoxyCodeLine{30   \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(yaw, 100\textcolor{comment}{/*,255, true*/}); \textcolor{comment}{//yaw = no, shaking motion}}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+
+
+References maxpitchlimit, maxyawlimit, minpitchlimit, minyawlimit, pitchservo, and yawservo.
+

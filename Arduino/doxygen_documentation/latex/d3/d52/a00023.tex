@@ -1,0 +1,98 @@
+\hypertarget{a00023}{}\doxysection{serial\+Event.\+ino File Reference}
+\label{a00023}\index{serialEvent.ino@{serialEvent.ino}}
+
+
+Handles serial communication.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00023_ae02c004ca11252621882da563e676550}{serial\+Event2}} ()
+\begin{DoxyCompactList}\small\item\em Gets called when there is an event on serial channel 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00023_aa11606a63bbe57842b51321e714a8daf}{serial\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Gets called when there is an event on serial channel 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles serial communication. 
+
+Handles 3 serial communication trigger events. They get called whenever there is activity on any channel. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00023_aa11606a63bbe57842b51321e714a8daf}\label{a00023_aa11606a63bbe57842b51321e714a8daf}} 
+\index{serialEvent.ino@{serialEvent.ino}!serialEvent@{serialEvent}}
+\index{serialEvent@{serialEvent}!serialEvent.ino@{serialEvent.ino}}
+\doxysubsubsection{\texorpdfstring{serialEvent()}{serialEvent()}}
+{\footnotesize\ttfamily void serial\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets called when there is an event on serial channel 0. 
+
+\begin{DoxyItemize}
+\item runs until there is a communication line established \item stores incoming data into a character in\+Char \item appends in\+Char to input\+String \item if the terminator \textquotesingle{}\#\textquotesingle{} is received, the command is considered complete and \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider()}} is called \item a confirmation of reception is given by sending the received command back to the sender \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\end{DoxyItemize}
+
+
+Definition at line 41 of file serial\+Event.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                    \{}
+\DoxyCodeLine{42   \textcolor{keywordflow}{while} (Serial.available()) \{}
+\DoxyCodeLine{43     \textcolor{keywordtype}{char} inChar = (char)Serial.read();}
+\DoxyCodeLine{44     \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}} += inChar;                     }
+\DoxyCodeLine{45     \textcolor{keywordflow}{if} (inChar == \textcolor{charliteral}{'\#'}) \{}
+\DoxyCodeLine{46       \textcolor{comment}{//Serial2.println(inputString);}}
+\DoxyCodeLine{47       Serial.println(\mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}});}
+\DoxyCodeLine{48       \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider}}();}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50   \}}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+
+
+References decider(), and input\+String.
+
+\mbox{\Hypertarget{a00023_ae02c004ca11252621882da563e676550}\label{a00023_ae02c004ca11252621882da563e676550}} 
+\index{serialEvent.ino@{serialEvent.ino}!serialEvent2@{serialEvent2}}
+\index{serialEvent2@{serialEvent2}!serialEvent.ino@{serialEvent.ino}}
+\doxysubsubsection{\texorpdfstring{serialEvent2()}{serialEvent2()}}
+{\footnotesize\ttfamily void serial\+Event2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets called when there is an event on serial channel 2. 
+
+\begin{DoxyItemize}
+\item runs until there is a communication line established \item stores incoming data into a character in\+Char2 \item appends in\+Char2 to input\+String \item if the terminator \textquotesingle{}\#\textquotesingle{} is received, the command is considered complete and \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider()}} is called \item a confirmation of reception is given by sending the received command back to the sender \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\end{DoxyItemize}
+
+
+Definition at line 19 of file serial\+Event.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                     \{                                         }
+\DoxyCodeLine{20   \textcolor{keywordflow}{while} (Serial2.available()) \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{char} inChar2 = (char)Serial2.read();}
+\DoxyCodeLine{22     \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}} += inChar2;                     }
+\DoxyCodeLine{23     \textcolor{keywordflow}{if} (inChar2 == \textcolor{charliteral}{'\#'}) \{}
+\DoxyCodeLine{24       \textcolor{comment}{//Serial2.println(inputString);}}
+\DoxyCodeLine{25       Serial2.println(\mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}});}
+\DoxyCodeLine{26       \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider}}();}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28   \}}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+
+
+References decider(), and input\+String.
+

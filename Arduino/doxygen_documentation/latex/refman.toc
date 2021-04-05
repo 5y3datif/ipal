@@ -1,0 +1,103 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}02-\/145 Arduino}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Wiring}{1}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Motor Wiring}{1}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}Encoder Wiring}{1}{subsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.2.3}Servo Wiring}{2}{subsection.1.2.3}% 
+\contentsline {subsubsection}{\numberline {1.2.3.1}Authors}{2}{subsubsection.1.2.3.1}% 
+\contentsline {subsubsection}{\numberline {1.2.3.2}Version}{2}{subsubsection.1.2.3.2}% 
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}% 
+\contentsline {chapter}{\numberline {3}File Documentation}{5}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}decider.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{5}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Function Documentation}{5}{subsection.3.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.2.1}decider()}{6}{subsubsection.3.1.2.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2.2}moveBackward()}{7}{subsubsection.3.1.2.2}% 
+\contentsline {subsubsection}{\numberline {3.1.2.3}moveForward()}{7}{subsubsection.3.1.2.3}% 
+\contentsline {subsubsection}{\numberline {3.1.2.4}turnLeft()}{8}{subsubsection.3.1.2.4}% 
+\contentsline {subsubsection}{\numberline {3.1.2.5}turnRight()}{8}{subsubsection.3.1.2.5}% 
+\contentsline {section}{\numberline {3.2}encoder\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Functions.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{9}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{9}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Function Documentation}{9}{subsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.2.1}encoderLeft()}{9}{subsubsection.3.2.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2.2}encoderRight()}{10}{subsubsection.3.2.2.2}% 
+\contentsline {section}{\numberline {3.3}head\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Movement.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{10}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{10}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Function Documentation}{10}{subsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.2.1}headMotion\_predefined()}{10}{subsubsection.3.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2.2}movehead()}{11}{subsubsection.3.3.2.2}% 
+\contentsline {section}{\numberline {3.4}move\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Direction.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{12}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{12}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Function Documentation}{12}{subsection.3.4.2}% 
+\contentsline {subsubsection}{\numberline {3.4.2.1}motor()}{12}{subsubsection.3.4.2.1}% 
+\contentsline {subsubsection}{\numberline {3.4.2.2}moveDirection()}{14}{subsubsection.3.4.2.2}% 
+\contentsline {section}{\numberline {3.5}P\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Initial.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{15}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{15}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Function Documentation}{15}{subsection.3.5.2}% 
+\contentsline {subsubsection}{\numberline {3.5.2.1}PID\_initial()}{15}{subsubsection.3.5.2.1}% 
+\contentsline {section}{\numberline {3.6}print\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Status.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{16}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{16}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Function Documentation}{16}{subsection.3.6.2}% 
+\contentsline {subsubsection}{\numberline {3.6.2.1}motionText()}{16}{subsubsection.3.6.2.1}% 
+\contentsline {subsubsection}{\numberline {3.6.2.2}printStatus()}{17}{subsubsection.3.6.2.2}% 
+\contentsline {section}{\numberline {3.7}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}M\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}md File Reference}{18}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}serial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Event.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{18}{section.3.8}% 
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{18}{subsection.3.8.1}% 
+\contentsline {subsection}{\numberline {3.8.2}Function Documentation}{18}{subsection.3.8.2}% 
+\contentsline {subsubsection}{\numberline {3.8.2.1}serialEvent()}{18}{subsubsection.3.8.2.1}% 
+\contentsline {subsubsection}{\numberline {3.8.2.2}serialEvent2()}{19}{subsubsection.3.8.2.2}% 
+\contentsline {section}{\numberline {3.9}stop\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Motion.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ino File Reference}{19}{section.3.9}% 
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{19}{subsection.3.9.1}% 
+\contentsline {subsection}{\numberline {3.9.2}Function Documentation}{19}{subsection.3.9.2}% 
+\contentsline {subsubsection}{\numberline {3.9.2.1}stopMotion()}{20}{subsubsection.3.9.2.1}% 
+\contentsline {section}{\numberline {3.10}T\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}F02-\/145\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Arduino.ino File Reference}{20}{section.3.10}% 
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{21}{subsection.3.10.1}% 
+\contentsline {subsection}{\numberline {3.10.2}Macro Definition Documentation}{21}{subsection.3.10.2}% 
+\contentsline {subsubsection}{\numberline {3.10.2.1}CCW}{22}{subsubsection.3.10.2.1}% 
+\contentsline {subsubsection}{\numberline {3.10.2.2}CW}{22}{subsubsection.3.10.2.2}% 
+\contentsline {subsubsection}{\numberline {3.10.2.3}encoder\_L\_C1}{22}{subsubsection.3.10.2.3}% 
+\contentsline {subsubsection}{\numberline {3.10.2.4}encoder\_R\_C1}{22}{subsubsection.3.10.2.4}% 
+\contentsline {subsubsection}{\numberline {3.10.2.5}Front}{22}{subsubsection.3.10.2.5}% 
+\contentsline {subsubsection}{\numberline {3.10.2.6}KD}{23}{subsubsection.3.10.2.6}% 
+\contentsline {subsubsection}{\numberline {3.10.2.7}KI}{23}{subsubsection.3.10.2.7}% 
+\contentsline {subsubsection}{\numberline {3.10.2.8}KP}{23}{subsubsection.3.10.2.8}% 
+\contentsline {subsubsection}{\numberline {3.10.2.9}Left}{23}{subsubsection.3.10.2.9}% 
+\contentsline {subsubsection}{\numberline {3.10.2.10}maxpitchlimit}{23}{subsubsection.3.10.2.10}% 
+\contentsline {subsubsection}{\numberline {3.10.2.11}maxyawlimit}{24}{subsubsection.3.10.2.11}% 
+\contentsline {subsubsection}{\numberline {3.10.2.12}minpitchlimit}{24}{subsubsection.3.10.2.12}% 
+\contentsline {subsubsection}{\numberline {3.10.2.13}minyawlimit}{24}{subsubsection.3.10.2.13}% 
+\contentsline {subsubsection}{\numberline {3.10.2.14}motor\_ENA}{24}{subsubsection.3.10.2.14}% 
+\contentsline {subsubsection}{\numberline {3.10.2.15}motor\_ENB}{24}{subsubsection.3.10.2.15}% 
+\contentsline {subsubsection}{\numberline {3.10.2.16}motor\_IN1}{25}{subsubsection.3.10.2.16}% 
+\contentsline {subsubsection}{\numberline {3.10.2.17}motor\_IN2}{25}{subsubsection.3.10.2.17}% 
+\contentsline {subsubsection}{\numberline {3.10.2.18}motor\_IN3}{25}{subsubsection.3.10.2.18}% 
+\contentsline {subsubsection}{\numberline {3.10.2.19}motor\_IN4}{25}{subsubsection.3.10.2.19}% 
+\contentsline {subsubsection}{\numberline {3.10.2.20}Rear}{25}{subsubsection.3.10.2.20}% 
+\contentsline {subsubsection}{\numberline {3.10.2.21}Right}{26}{subsubsection.3.10.2.21}% 
+\contentsline {subsubsection}{\numberline {3.10.2.22}robot\_speed\_max}{26}{subsubsection.3.10.2.22}% 
+\contentsline {subsubsection}{\numberline {3.10.2.23}robot\_speed\_min}{26}{subsubsection.3.10.2.23}% 
+\contentsline {subsubsection}{\numberline {3.10.2.24}servoPitchCenter}{26}{subsubsection.3.10.2.24}% 
+\contentsline {subsubsection}{\numberline {3.10.2.25}servoPitchPin}{26}{subsubsection.3.10.2.25}% 
+\contentsline {subsubsection}{\numberline {3.10.2.26}servoYawCenter}{27}{subsubsection.3.10.2.26}% 
+\contentsline {subsubsection}{\numberline {3.10.2.27}servoYawPin}{27}{subsubsection.3.10.2.27}% 
+\contentsline {subsubsection}{\numberline {3.10.2.28}Start}{27}{subsubsection.3.10.2.28}% 
+\contentsline {subsubsection}{\numberline {3.10.2.29}Stop}{27}{subsubsection.3.10.2.29}% 
+\contentsline {subsection}{\numberline {3.10.3}Function Documentation}{27}{subsection.3.10.3}% 
+\contentsline {subsubsection}{\numberline {3.10.3.1}loop()}{28}{subsubsection.3.10.3.1}% 
+\contentsline {subsubsection}{\numberline {3.10.3.2}setup()}{28}{subsubsection.3.10.3.2}% 
+\contentsline {subsection}{\numberline {3.10.4}Variable Documentation}{28}{subsection.3.10.4}% 
+\contentsline {subsubsection}{\numberline {3.10.4.1}countLeft}{28}{subsubsection.3.10.4.1}% 
+\contentsline {subsubsection}{\numberline {3.10.4.2}countRight}{29}{subsubsection.3.10.4.2}% 
+\contentsline {subsubsection}{\numberline {3.10.4.3}currentMotion}{29}{subsubsection.3.10.4.3}% 
+\contentsline {subsubsection}{\numberline {3.10.4.4}inputString}{29}{subsubsection.3.10.4.4}% 
+\contentsline {subsubsection}{\numberline {3.10.4.5}leftPID}{29}{subsubsection.3.10.4.5}% 
+\contentsline {subsubsection}{\numberline {3.10.4.6}pitchservo}{30}{subsubsection.3.10.4.6}% 
+\contentsline {subsubsection}{\numberline {3.10.4.7}pwmLeft}{30}{subsubsection.3.10.4.7}% 
+\contentsline {subsubsection}{\numberline {3.10.4.8}pwmRight}{30}{subsubsection.3.10.4.8}% 
+\contentsline {subsubsection}{\numberline {3.10.4.9}rightPID}{30}{subsubsection.3.10.4.9}% 
+\contentsline {subsubsection}{\numberline {3.10.4.10}stepsMotion}{31}{subsubsection.3.10.4.10}% 
+\contentsline {subsubsection}{\numberline {3.10.4.11}stepsOverall}{31}{subsubsection.3.10.4.11}% 
+\contentsline {subsubsection}{\numberline {3.10.4.12}yawservo}{31}{subsubsection.3.10.4.12}% 
+\contentsline {chapter}{Index}{33}{section*.12}% 

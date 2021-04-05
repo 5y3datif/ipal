@@ -1,0 +1,403 @@
+\hypertarget{a00594}{}\doxysection{Auto\+P\+I\+D\+Relay Class Reference}
+\label{a00594}\index{AutoPIDRelay@{AutoPIDRelay}}
+
+
+{\ttfamily \#include \char`\"{}Auto\+P\+I\+D.\+h\char`\"{}}
+
+Inheritance diagram for Auto\+P\+I\+D\+Relay\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/de4/a00594}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00594_a27b7223d1f8df01169caabdcefa1e15f}{Auto\+P\+I\+D\+Relay}} (double $\ast$input, double $\ast$setpoint, bool $\ast$relay\+State, double pulse\+Width, double Kp, double Ki, double Kd)
+\item 
+void \mbox{\hyperlink{a00594_a13a43e6d814de94978c515cb084873b1}{run}} ()
+\item 
+double \mbox{\hyperlink{a00594_a5406488f42a20e1ea0d30296f634445b}{get\+Pulse\+Value}} ()
+\item 
+void \mbox{\hyperlink{a00590_afda575c183da7f128b233cce8e5b2d30}{set\+Gains}} (double Kp, double Ki, double Kd)
+\item 
+void \mbox{\hyperlink{a00590_acae3f5a3aa072a5e2668858c8f7a7011}{set\+Bang\+Bang}} (double bang\+On, double bang\+Off)
+\item 
+void \mbox{\hyperlink{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}{set\+Bang\+Bang}} (double bang\+Range)
+\item 
+void \mbox{\hyperlink{a00590_a74f3336efbc6d0e12309ccbfd20c2811}{set\+Output\+Range}} (double output\+Min, double output\+Max)
+\item 
+void \mbox{\hyperlink{a00590_aa05d681cf2af2ea060582fdaf4103c8a}{set\+Time\+Step}} (unsigned long time\+Step)
+\item 
+bool \mbox{\hyperlink{a00590_a706360a08d384e5b6269b58820c0c20a}{at\+Set\+Point}} (double threshold)
+\item 
+void \mbox{\hyperlink{a00590_a8c528baf37154d347366083f0f816846}{stop}} ()
+\item 
+void \mbox{\hyperlink{a00590_ad20897c5c8bd47f5d4005989bead0e55}{reset}} ()
+\item 
+bool \mbox{\hyperlink{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}{is\+Stopped}} ()
+\item 
+double \mbox{\hyperlink{a00590_a1572da0a0c86b3a001f215c13b891341}{get\+Integral}} ()
+\item 
+void \mbox{\hyperlink{a00590_a170955b89c0bf4ae1de1548bca6f6443}{set\+Integral}} (double integral)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool $\ast$ \mbox{\hyperlink{a00594_ac1ad3404f92d592d11acf819ada0b52d}{\+\_\+relay\+State}}
+\item 
+unsigned long \mbox{\hyperlink{a00594_a5dae1cfd7c295c4190d0a4939425c7c2}{\+\_\+pulse\+Width}}
+\item 
+unsigned long \mbox{\hyperlink{a00594_a3414fae28490e1d84e92a8aed72bf91a}{\+\_\+last\+Pulse\+Time}}
+\item 
+double \mbox{\hyperlink{a00594_af5e653e266596ce3836a983d55d9cdcf}{\+\_\+pulse\+Value}}
+\item 
+double \mbox{\hyperlink{a00590_a240d428b23bc549c30e331aae9553a10}{\+\_\+\+Kp}}
+\item 
+double \mbox{\hyperlink{a00590_a785566f7f2b2b52eacef6be323d8f854}{\+\_\+\+Ki}}
+\item 
+double \mbox{\hyperlink{a00590_a06e5c770c8e0d5d168258553a0c0f144}{\+\_\+\+Kd}}
+\item 
+double \mbox{\hyperlink{a00590_aef24901bb53885fb4eab2e7d808be5ea}{\+\_\+integral}}
+\item 
+double \mbox{\hyperlink{a00590_a2ce390cfbc2f2773de54dc8434a72580}{\+\_\+previous\+Error}}
+\item 
+double \mbox{\hyperlink{a00590_ac2192cea431b6991262250fec213d0ce}{\+\_\+bang\+On}}
+\item 
+double \mbox{\hyperlink{a00590_a0edb99c535e183999c37294d47375267}{\+\_\+bang\+Off}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_aec2237392c78d482fb0d599ccc636bf7}{\+\_\+input}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_a74a573f57cb7183f23b6edcb718f29ee}{\+\_\+setpoint}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}{\+\_\+output}}
+\item 
+double \mbox{\hyperlink{a00590_a6d7528447f4ed66d4c59846585ce45ef}{\+\_\+output\+Min}}
+\item 
+double \mbox{\hyperlink{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}{\+\_\+output\+Max}}
+\item 
+unsigned long \mbox{\hyperlink{a00590_a555ba19986039eefa217b0157f605cd5}{\+\_\+time\+Step}}
+\item 
+unsigned long \mbox{\hyperlink{a00590_a67426d20d93bf8233cc3e47c91fda5aa}{\+\_\+last\+Step}}
+\item 
+bool \mbox{\hyperlink{a00590_a6c3cac28822b98b8a0861af6ecf71230}{\+\_\+stopped}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 45 of file Auto\+P\+I\+D.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a00594_a27b7223d1f8df01169caabdcefa1e15f}\label{a00594_a27b7223d1f8df01169caabdcefa1e15f}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!AutoPIDRelay@{AutoPIDRelay}}
+\index{AutoPIDRelay@{AutoPIDRelay}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{AutoPIDRelay()}{AutoPIDRelay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00594}{Auto\+P\+I\+D\+Relay}} (\begin{DoxyParamCaption}\item[{double $\ast$}]{input,  }\item[{double $\ast$}]{setpoint,  }\item[{bool $\ast$}]{relay\+State,  }\item[{double}]{pulse\+Width,  }\item[{double}]{Kp,  }\item[{double}]{Ki,  }\item[{double}]{Kd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 48 of file Auto\+P\+I\+D.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49       : \mbox{\hyperlink{a00590_a4a74dbc3778f5222a595eabd5662c5d7}{AutoPID}}(input, setpoint, \&\mbox{\hyperlink{a00594_af5e653e266596ce3836a983d55d9cdcf}{\_pulseValue}}, 0, 1.0, Kp, Ki, Kd) \{}
+\DoxyCodeLine{50       \mbox{\hyperlink{a00594_ac1ad3404f92d592d11acf819ada0b52d}{\_relayState}} = relayState;}
+\DoxyCodeLine{51       \mbox{\hyperlink{a00594_a5dae1cfd7c295c4190d0a4939425c7c2}{\_pulseWidth}} = pulseWidth;}
+\DoxyCodeLine{52     \};}
+
+\end{DoxyCode}
+
+
+References \+\_\+pulse\+Width, and \+\_\+relay\+State.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00590_a706360a08d384e5b6269b58820c0c20a}\label{a00590_a706360a08d384e5b6269b58820c0c20a}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!atSetPoint@{atSetPoint}}
+\index{atSetPoint@{atSetPoint}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{atSetPoint()}{atSetPoint()}}
+{\footnotesize\ttfamily bool at\+Set\+Point (\begin{DoxyParamCaption}\item[{double}]{threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_a1572da0a0c86b3a001f215c13b891341}\label{a00590_a1572da0a0c86b3a001f215c13b891341}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!getIntegral@{getIntegral}}
+\index{getIntegral@{getIntegral}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{getIntegral()}{getIntegral()}}
+{\footnotesize\ttfamily double get\+Integral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00594_a5406488f42a20e1ea0d30296f634445b}\label{a00594_a5406488f42a20e1ea0d30296f634445b}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!getPulseValue@{getPulseValue}}
+\index{getPulseValue@{getPulseValue}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{getPulseValue()}{getPulseValue()}}
+{\footnotesize\ttfamily double get\+Pulse\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}\label{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{isStopped()}{isStopped()}}
+{\footnotesize\ttfamily bool is\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_ad20897c5c8bd47f5d4005989bead0e55}\label{a00590_ad20897c5c8bd47f5d4005989bead0e55}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!reset@{reset}}
+\index{reset@{reset}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00594_a13a43e6d814de94978c515cb084873b1}\label{a00594_a13a43e6d814de94978c515cb084873b1}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!run@{run}}
+\index{run@{run}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_acae3f5a3aa072a5e2668858c8f7a7011}\label{a00590_acae3f5a3aa072a5e2668858c8f7a7011}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setBangBang@{setBangBang}}
+\index{setBangBang@{setBangBang}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setBangBang()}{setBangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void set\+Bang\+Bang (\begin{DoxyParamCaption}\item[{double}]{bang\+On,  }\item[{double}]{bang\+Off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}\label{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setBangBang@{setBangBang}}
+\index{setBangBang@{setBangBang}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setBangBang()}{setBangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void set\+Bang\+Bang (\begin{DoxyParamCaption}\item[{double}]{bang\+Range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_afda575c183da7f128b233cce8e5b2d30}\label{a00590_afda575c183da7f128b233cce8e5b2d30}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setGains@{setGains}}
+\index{setGains@{setGains}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setGains()}{setGains()}}
+{\footnotesize\ttfamily void set\+Gains (\begin{DoxyParamCaption}\item[{double}]{Kp,  }\item[{double}]{Ki,  }\item[{double}]{Kd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_a170955b89c0bf4ae1de1548bca6f6443}\label{a00590_a170955b89c0bf4ae1de1548bca6f6443}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setIntegral@{setIntegral}}
+\index{setIntegral@{setIntegral}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setIntegral()}{setIntegral()}}
+{\footnotesize\ttfamily void set\+Integral (\begin{DoxyParamCaption}\item[{double}]{integral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_a74f3336efbc6d0e12309ccbfd20c2811}\label{a00590_a74f3336efbc6d0e12309ccbfd20c2811}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setOutputRange@{setOutputRange}}
+\index{setOutputRange@{setOutputRange}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setOutputRange()}{setOutputRange()}}
+{\footnotesize\ttfamily void set\+Output\+Range (\begin{DoxyParamCaption}\item[{double}]{output\+Min,  }\item[{double}]{output\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_aa05d681cf2af2ea060582fdaf4103c8a}\label{a00590_aa05d681cf2af2ea060582fdaf4103c8a}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!setTimeStep@{setTimeStep}}
+\index{setTimeStep@{setTimeStep}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{setTimeStep()}{setTimeStep()}}
+{\footnotesize\ttfamily void set\+Time\+Step (\begin{DoxyParamCaption}\item[{unsigned long}]{time\+Step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+\mbox{\Hypertarget{a00590_a8c528baf37154d347366083f0f816846}\label{a00590_a8c528baf37154d347366083f0f816846}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!stop@{stop}}
+\index{stop@{stop}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{a00590_a0edb99c535e183999c37294d47375267}\label{a00590_a0edb99c535e183999c37294d47375267}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_bangOff@{\_bangOff}}
+\index{\_bangOff@{\_bangOff}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_bangOff}{\_bangOff}}
+{\footnotesize\ttfamily double \+\_\+bang\+Off\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_ac2192cea431b6991262250fec213d0ce}\label{a00590_ac2192cea431b6991262250fec213d0ce}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_bangOn@{\_bangOn}}
+\index{\_bangOn@{\_bangOn}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_bangOn}{\_bangOn}}
+{\footnotesize\ttfamily double \+\_\+bang\+On\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aec2237392c78d482fb0d599ccc636bf7}\label{a00590_aec2237392c78d482fb0d599ccc636bf7}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_input@{\_input}}
+\index{\_input@{\_input}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_input}{\_input}}
+{\footnotesize\ttfamily double$\ast$ \+\_\+input\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aef24901bb53885fb4eab2e7d808be5ea}\label{a00590_aef24901bb53885fb4eab2e7d808be5ea}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_integral@{\_integral}}
+\index{\_integral@{\_integral}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_integral}{\_integral}}
+{\footnotesize\ttfamily double \+\_\+integral\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 36 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a06e5c770c8e0d5d168258553a0c0f144}\label{a00590_a06e5c770c8e0d5d168258553a0c0f144}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_Kd@{\_Kd}}
+\index{\_Kd@{\_Kd}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_Kd}{\_Kd}}
+{\footnotesize\ttfamily double \+\_\+\+Kd\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a785566f7f2b2b52eacef6be323d8f854}\label{a00590_a785566f7f2b2b52eacef6be323d8f854}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_Ki@{\_Ki}}
+\index{\_Ki@{\_Ki}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_Ki}{\_Ki}}
+{\footnotesize\ttfamily double \+\_\+\+Ki\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a240d428b23bc549c30e331aae9553a10}\label{a00590_a240d428b23bc549c30e331aae9553a10}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_Kp@{\_Kp}}
+\index{\_Kp@{\_Kp}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_Kp}{\_Kp}}
+{\footnotesize\ttfamily double \+\_\+\+Kp\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00594_a3414fae28490e1d84e92a8aed72bf91a}\label{a00594_a3414fae28490e1d84e92a8aed72bf91a}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_lastPulseTime@{\_lastPulseTime}}
+\index{\_lastPulseTime@{\_lastPulseTime}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_lastPulseTime}{\_lastPulseTime}}
+{\footnotesize\ttfamily unsigned long \+\_\+last\+Pulse\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a67426d20d93bf8233cc3e47c91fda5aa}\label{a00590_a67426d20d93bf8233cc3e47c91fda5aa}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_lastStep@{\_lastStep}}
+\index{\_lastStep@{\_lastStep}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_lastStep}{\_lastStep}}
+{\footnotesize\ttfamily unsigned long \+\_\+last\+Step\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}\label{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_output@{\_output}}
+\index{\_output@{\_output}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_output}{\_output}}
+{\footnotesize\ttfamily double $\ast$ \+\_\+output\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}\label{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_outputMax@{\_outputMax}}
+\index{\_outputMax@{\_outputMax}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_outputMax}{\_outputMax}}
+{\footnotesize\ttfamily double \+\_\+output\+Max\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a6d7528447f4ed66d4c59846585ce45ef}\label{a00590_a6d7528447f4ed66d4c59846585ce45ef}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_outputMin@{\_outputMin}}
+\index{\_outputMin@{\_outputMin}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_outputMin}{\_outputMin}}
+{\footnotesize\ttfamily double \+\_\+output\+Min\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a2ce390cfbc2f2773de54dc8434a72580}\label{a00590_a2ce390cfbc2f2773de54dc8434a72580}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_previousError@{\_previousError}}
+\index{\_previousError@{\_previousError}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_previousError}{\_previousError}}
+{\footnotesize\ttfamily double \+\_\+previous\+Error\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 36 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00594_af5e653e266596ce3836a983d55d9cdcf}\label{a00594_af5e653e266596ce3836a983d55d9cdcf}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_pulseValue@{\_pulseValue}}
+\index{\_pulseValue@{\_pulseValue}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_pulseValue}{\_pulseValue}}
+{\footnotesize\ttfamily double \+\_\+pulse\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00594_a5dae1cfd7c295c4190d0a4939425c7c2}\label{a00594_a5dae1cfd7c295c4190d0a4939425c7c2}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_pulseWidth@{\_pulseWidth}}
+\index{\_pulseWidth@{\_pulseWidth}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_pulseWidth}{\_pulseWidth}}
+{\footnotesize\ttfamily unsigned long \+\_\+pulse\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 60 of file Auto\+P\+I\+D.\+h.
+
+
+
+Referenced by Auto\+P\+I\+D\+Relay().
+
+\mbox{\Hypertarget{a00594_ac1ad3404f92d592d11acf819ada0b52d}\label{a00594_ac1ad3404f92d592d11acf819ada0b52d}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_relayState@{\_relayState}}
+\index{\_relayState@{\_relayState}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_relayState}{\_relayState}}
+{\footnotesize\ttfamily bool$\ast$ \+\_\+relay\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Auto\+P\+I\+D.\+h.
+
+
+
+Referenced by Auto\+P\+I\+D\+Relay().
+
+\mbox{\Hypertarget{a00590_a74a573f57cb7183f23b6edcb718f29ee}\label{a00590_a74a573f57cb7183f23b6edcb718f29ee}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_setpoint@{\_setpoint}}
+\index{\_setpoint@{\_setpoint}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_setpoint}{\_setpoint}}
+{\footnotesize\ttfamily double $\ast$ \+\_\+setpoint\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a6c3cac28822b98b8a0861af6ecf71230}\label{a00590_a6c3cac28822b98b8a0861af6ecf71230}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_stopped@{\_stopped}}
+\index{\_stopped@{\_stopped}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_stopped}{\_stopped}}
+{\footnotesize\ttfamily bool \+\_\+stopped\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 41 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a555ba19986039eefa217b0157f605cd5}\label{a00590_a555ba19986039eefa217b0157f605cd5}} 
+\index{AutoPIDRelay@{AutoPIDRelay}!\_timeStep@{\_timeStep}}
+\index{\_timeStep@{\_timeStep}!AutoPIDRelay@{AutoPIDRelay}}
+\doxysubsubsection{\texorpdfstring{\_timeStep}{\_timeStep}}
+{\footnotesize\ttfamily unsigned long \+\_\+time\+Step\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Auto\+P\+I\+D.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00002}{Auto\+P\+I\+D.\+h}}\end{DoxyCompactItemize}

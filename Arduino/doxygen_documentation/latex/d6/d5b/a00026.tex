@@ -1,0 +1,58 @@
+\hypertarget{a00026}{}\doxysection{stop\+Motion.\+ino File Reference}
+\label{a00026}\index{stopMotion.ino@{stopMotion.ino}}
+
+
+Stops robot.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}{stop\+Motion}} ()
+\begin{DoxyCompactList}\small\item\em Commands both motors to stop spinning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stops robot. 
+
+Stops all motion of the robot. Overwrites everything. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}\label{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}} 
+\index{stopMotion.ino@{stopMotion.ino}!stopMotion@{stopMotion}}
+\index{stopMotion@{stopMotion}!stopMotion.ino@{stopMotion.ino}}
+\doxysubsubsection{\texorpdfstring{stopMotion()}{stopMotion()}}
+{\footnotesize\ttfamily void stop\+Motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Commands both motors to stop spinning. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file stop\+Motion.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                   \{}
+\DoxyCodeLine{13   \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}}, \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}});}
+\DoxyCodeLine{14   \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}}, \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}});}
+\DoxyCodeLine{15   \mbox{\hyperlink{a00029_aec3002d20ea3109416d8345a0f0dd2dc}{currentMotion}} = \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17   \textcolor{comment}{// Clear the enocder counters. //}}
+\DoxyCodeLine{18   \mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{countLeft}} = 0;  }
+\DoxyCodeLine{19   \mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{countRight}} = 0;  }
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+
+
+References count\+Left, count\+Right, current\+Motion, Left, motor(), Right, and Stop.
+
+
+
+Referenced by decider(), and move\+Direction().
+

@@ -1,0 +1,203 @@
+\hypertarget{a00011}{}\doxysection{move\+\_\+\+Direction.\+ino File Reference}
+\label{a00011}\index{move\_Direction.ino@{move\_Direction.ino}}
+
+
+Responsible for motor control.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00011_aba3346e6df19d7e49b8d8e4573c6e052}{move\+Direction}} (int Direction, double steps)
+\begin{DoxyCompactList}\small\item\em Handles the motor P\+WM and directions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}} (int Left\+Right, int pwm, int C\+W\+C\+CW)
+\begin{DoxyCompactList}\small\item\em Controls both motors\textquotesingle{} angular direction and their speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for motor control. 
+
+Contains code pertaining to movement and how much motion needs to happen. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00011_a8df362b5a970cbb7da365debe81274da}\label{a00011_a8df362b5a970cbb7da365debe81274da}} 
+\index{move\_Direction.ino@{move\_Direction.ino}!motor@{motor}}
+\index{motor@{motor}!move\_Direction.ino@{move\_Direction.ino}}
+\doxysubsubsection{\texorpdfstring{motor()}{motor()}}
+{\footnotesize\ttfamily void motor (\begin{DoxyParamCaption}\item[{int}]{Left\+Right,  }\item[{int}]{pwm,  }\item[{int}]{C\+W\+C\+CW }\end{DoxyParamCaption})}
+
+
+
+Controls both motors\textquotesingle{} angular direction and their speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Left\+Right} & Defines which motor \\
+\hline
+{\em pwm} & P\+WM signal to control motor speed \\
+\hline
+{\em C\+W\+C\+CW} & CW=Clock\+Wise, C\+CW = Counterclock\+Wise. The direction of the motor when looking at it down the shaft from the wheel\textquotesingle{}s end. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void ~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file move\+\_\+\+Direction.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83                                               \{}
+\DoxyCodeLine{84   \textcolor{keywordflow}{switch} (LeftRight) \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}:}
+\DoxyCodeLine{86       \textcolor{keywordflow}{switch} (CWCCW) \{}
+\DoxyCodeLine{87         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}}:}
+\DoxyCodeLine{88           digitalWrite(\mbox{\hyperlink{a00029_a06eddde23b0f28eaaec9feda5d5749e3}{motor\_IN1}}, HIGH);}
+\DoxyCodeLine{89           digitalWrite(\mbox{\hyperlink{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}{motor\_IN2}}, LOW);}
+\DoxyCodeLine{90           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{91         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}}:}
+\DoxyCodeLine{92           digitalWrite(\mbox{\hyperlink{a00029_a06eddde23b0f28eaaec9feda5d5749e3}{motor\_IN1}}, LOW);}
+\DoxyCodeLine{93           digitalWrite(\mbox{\hyperlink{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}{motor\_IN2}}, HIGH);}
+\DoxyCodeLine{94           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{95       \}}
+\DoxyCodeLine{96       }
+\DoxyCodeLine{97       \textcolor{comment}{// Commented to disable PID //}}
+\DoxyCodeLine{98       \textcolor{comment}{// digitalWrite(motor\_ENA,HIGH);}}
+\DoxyCodeLine{99       \textcolor{comment}{// analogWrite(motor\_ENA, pwm);}}
+\DoxyCodeLine{100       }
+\DoxyCodeLine{101       \textcolor{comment}{// The following code replaces PID. Only works because both motors are mechanically similar. //}}
+\DoxyCodeLine{102       \textcolor{keywordflow}{if} (pwm > 0)}
+\DoxyCodeLine{103         analogWrite(\mbox{\hyperlink{a00029_a7df9782fe4d6fd71743442906e5309fc}{motor\_ENA}}, 255);}
+\DoxyCodeLine{104       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{105         analogWrite(\mbox{\hyperlink{a00029_a7df9782fe4d6fd71743442906e5309fc}{motor\_ENA}}, 0);}
+\DoxyCodeLine{106       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}:}
+\DoxyCodeLine{109       \textcolor{keywordflow}{switch} (CWCCW) \{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}}:}
+\DoxyCodeLine{111           digitalWrite(\mbox{\hyperlink{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}{motor\_IN3}}, HIGH);}
+\DoxyCodeLine{112           digitalWrite(\mbox{\hyperlink{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}{motor\_IN4}}, LOW);}
+\DoxyCodeLine{113           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}}:}
+\DoxyCodeLine{115           digitalWrite(\mbox{\hyperlink{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}{motor\_IN3}}, LOW);}
+\DoxyCodeLine{116           digitalWrite(\mbox{\hyperlink{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}{motor\_IN4}}, HIGH);}
+\DoxyCodeLine{117           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118       \}}
+\DoxyCodeLine{119       }
+\DoxyCodeLine{120       \textcolor{comment}{// Commented to disable PID //}}
+\DoxyCodeLine{121       \textcolor{comment}{// analogWrite(motor\_ENB, pwm);}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123       \textcolor{comment}{// The following code replaces PID. Only works because both motors are mechanically similar. //}}
+\DoxyCodeLine{124       \textcolor{keywordflow}{if} (pwm > 0)}
+\DoxyCodeLine{125         analogWrite(\mbox{\hyperlink{a00029_ad17a728e9698d8a783d5fb1c807bf157}{motor\_ENB}}, 255);}
+\DoxyCodeLine{126       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{127         analogWrite(\mbox{\hyperlink{a00029_ad17a728e9698d8a783d5fb1c807bf157}{motor\_ENB}}, 0);}
+\DoxyCodeLine{128       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{129   \}}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+
+
+References C\+CW, CW, Left, motor\+\_\+\+E\+NA, motor\+\_\+\+E\+NB, motor\+\_\+\+I\+N1, motor\+\_\+\+I\+N2, motor\+\_\+\+I\+N3, motor\+\_\+\+I\+N4, and Right.
+
+
+
+Referenced by move\+Direction(), and stop\+Motion().
+
+\mbox{\Hypertarget{a00011_aba3346e6df19d7e49b8d8e4573c6e052}\label{a00011_aba3346e6df19d7e49b8d8e4573c6e052}} 
+\index{move\_Direction.ino@{move\_Direction.ino}!moveDirection@{moveDirection}}
+\index{moveDirection@{moveDirection}!move\_Direction.ino@{move\_Direction.ino}}
+\doxysubsubsection{\texorpdfstring{moveDirection()}{moveDirection()}}
+{\footnotesize\ttfamily void move\+Direction (\begin{DoxyParamCaption}\item[{int}]{Direction,  }\item[{double}]{steps }\end{DoxyParamCaption})}
+
+
+
+Handles the motor P\+WM and directions. 
+
+Based on what the direction is, it decides which motor needs to be going CW (clockwise) and which C\+CW (counterclockwise).
+
+
+\begin{DoxyParams}{Parameters}
+{\em Direction} & Front, Rear, Left, Right \\
+\hline
+{\em steps} & Motion Parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file move\+\_\+\+Direction.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                                 \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19   \textcolor{comment}{// Uncomment for debugging //}}
+\DoxyCodeLine{20   \textcolor{comment}{//Serial.print(motionText(currentMotion));}}
+\DoxyCodeLine{21   \textcolor{comment}{//Serial.println(motionText(Direction));}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   \textcolor{comment}{// stepsOverall increases until the difference between stepsMotion (steps taken while moving until now) and it becomes greater than the steps the robot needs to take //}}
+\DoxyCodeLine{24   \textcolor{keywordflow}{while} (\mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}} -\/ \mbox{\hyperlink{a00029_a57ae21281c6035a6e05bad5e2a40143d}{stepsMotion}} < steps \&\& !Serial2.available()) \{  }
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26     \textcolor{comment}{// Uncomment for debugging //}}
+\DoxyCodeLine{27     \textcolor{comment}{//Serial2.println("stepsOverall -\/ stepsMotion < steps");}}
+\DoxyCodeLine{28     \textcolor{comment}{//Serial2.print(pwmRight); Serial2.print(" "); Serial2.print(pwmLeft); Serial2.print(" | "); Serial2.print(countRight); Serial2.print(" "); Serial2.print(countLeft); Serial2.print(" "); Serial2.print(stepsOverall); Serial2.println(" | ");}}
+\DoxyCodeLine{29     }
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (\mbox{\hyperlink{a00029_aec3002d20ea3109416d8345a0f0dd2dc}{currentMotion}} == Direction) \{ }
+\DoxyCodeLine{31       \textcolor{comment}{// Check to save from applying PID while changing direction. //}}
+\DoxyCodeLine{32       }
+\DoxyCodeLine{33       \textcolor{comment}{// runs PID and updates pwmLeft and pwmRight// }}
+\DoxyCodeLine{34       \mbox{\hyperlink{a00029_a3a6111ebbd586d7b3a0807bcd4072870}{rightPID}}.run();}
+\DoxyCodeLine{35       \mbox{\hyperlink{a00029_a1706bf6cbdcb567626089276b658bcb0}{leftPID}}.run();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37       \textcolor{keywordflow}{switch} (Direction) \{}
+\DoxyCodeLine{38         \textcolor{comment}{// Applying updated PWM values //}}
+\DoxyCodeLine{39         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}{Front}}:}
+\DoxyCodeLine{40           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, \mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwmRight}}, \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}});}
+\DoxyCodeLine{41           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, \mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwmLeft}}, \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}});}
+\DoxyCodeLine{42           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}{Rear}}:}
+\DoxyCodeLine{45           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, \mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwmRight}}, \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}});}
+\DoxyCodeLine{46           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, \mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwmLeft}}, \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}});}
+\DoxyCodeLine{47           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}:}
+\DoxyCodeLine{50           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, \mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwmRight}}, \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}});}
+\DoxyCodeLine{51           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, \mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwmLeft}}, \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}});}
+\DoxyCodeLine{52           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}:}
+\DoxyCodeLine{55           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, \mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwmRight}}, \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}});}
+\DoxyCodeLine{56           \mbox{\hyperlink{a00011_a8df362b5a970cbb7da365debe81274da}{motor}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, \mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwmLeft}}, \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{CCW}});}
+\DoxyCodeLine{57           \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58       \}}
+\DoxyCodeLine{59     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{60       }
+\DoxyCodeLine{61       \textcolor{comment}{// changes direction //}}
+\DoxyCodeLine{62       \mbox{\hyperlink{a00029_aec3002d20ea3109416d8345a0f0dd2dc}{currentMotion}} = Direction;}
+\DoxyCodeLine{63       \textcolor{comment}{// saves steps so far to stepsMotion setting difference to zero //}}
+\DoxyCodeLine{64       \mbox{\hyperlink{a00029_a57ae21281c6035a6e05bad5e2a40143d}{stepsMotion}} = \mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}};}
+\DoxyCodeLine{65       }
+\DoxyCodeLine{66       \textcolor{comment}{// Uncomment for debugging //}}
+\DoxyCodeLine{67       \textcolor{comment}{//Serial2.println("currentMotion = Direction; stepsMotion = stepsOverall;");}}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69   \}}
+\DoxyCodeLine{70   \mbox{\hyperlink{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}{stopMotion}}();}
+\DoxyCodeLine{71   \textcolor{comment}{//Serial2.println("stepsOverall -\/ stepsMotion >= steps  stopMotion(); stepsMotion = stepsOverall;");}}
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+
+
+References C\+CW, current\+Motion, CW, Front, Left, left\+P\+ID, motor(), pwm\+Left, pwm\+Right, Rear, Right, right\+P\+ID, steps\+Motion, steps\+Overall, and stop\+Motion().
+
+
+
+Referenced by turn\+Left().
+

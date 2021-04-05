@@ -1,0 +1,115 @@
+\hypertarget{a00017}{}\doxysection{print\+Status.\+ino File Reference}
+\label{a00017}\index{printStatus.ino@{printStatus.ino}}
+
+
+A debugging option.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00017_a743686a7f8c73933aa49668fd432ebb4}{print\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Prints status on all serial communication channels. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{a00017_a7a7a058d802e76da7d57290cf110c2e9}{motion\+Text}} (int motion\+Integer)
+\begin{DoxyCompactList}\small\item\em Converts the motion integer to text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A debugging option. 
+
+Runs in \mbox{\hyperlink{a00029_afe461d27b9c48d5921c00d521181f12f}{loop()}} and displays the movement status of the robot on all serial communication channels. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00017_a7a7a058d802e76da7d57290cf110c2e9}\label{a00017_a7a7a058d802e76da7d57290cf110c2e9}} 
+\index{printStatus.ino@{printStatus.ino}!motionText@{motionText}}
+\index{motionText@{motionText}!printStatus.ino@{printStatus.ino}}
+\doxysubsubsection{\texorpdfstring{motionText()}{motionText()}}
+{\footnotesize\ttfamily String motion\+Text (\begin{DoxyParamCaption}\item[{int}]{motion\+Integer }\end{DoxyParamCaption})}
+
+
+
+Converts the motion integer to text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motion\+Integer} & Front, Rear, Left, Right -\/ integers from preprocessor directives \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file print\+Status.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43                                      \{}
+\DoxyCodeLine{44   \textcolor{keywordflow}{switch} (motionInteger) \{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}}:}
+\DoxyCodeLine{46       \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Stop"};}
+\DoxyCodeLine{47       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{48     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}{Front}}:}
+\DoxyCodeLine{49       \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Front"};}
+\DoxyCodeLine{50       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{51     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}{Rear}}:}
+\DoxyCodeLine{52       \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Rear"};}
+\DoxyCodeLine{53       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}:}
+\DoxyCodeLine{55       \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Left"};}
+\DoxyCodeLine{56       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{57     \textcolor{keywordflow}{case} \mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}:}
+\DoxyCodeLine{58       \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Right"};}
+\DoxyCodeLine{59       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{60   \}}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+
+
+References Front, Left, Rear, Right, and Stop.
+
+
+
+Referenced by print\+Status().
+
+\mbox{\Hypertarget{a00017_a743686a7f8c73933aa49668fd432ebb4}\label{a00017_a743686a7f8c73933aa49668fd432ebb4}} 
+\index{printStatus.ino@{printStatus.ino}!printStatus@{printStatus}}
+\index{printStatus@{printStatus}!printStatus.ino@{printStatus.ino}}
+\doxysubsubsection{\texorpdfstring{printStatus()}{printStatus()}}
+{\footnotesize\ttfamily void print\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints status on all serial communication channels. 
+
+Prints \begin{DoxyItemize}
+\item count\+Left \item count\+Right \item steps\+Overall \item steps\+Motion \item pwm\+Left \item pwm\+Right \end{DoxyItemize}
+
+
+Definition at line 20 of file print\+Status.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                     \{}
+\DoxyCodeLine{21     Serial2.print(\mbox{\hyperlink{a00017_a7a7a058d802e76da7d57290cf110c2e9}{motionText}}(\mbox{\hyperlink{a00029_aec3002d20ea3109416d8345a0f0dd2dc}{currentMotion}}));}
+\DoxyCodeLine{22     Serial2.print(\textcolor{stringliteral}{"; Count; L:"});}
+\DoxyCodeLine{23     Serial2.print(\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{countLeft}});}
+\DoxyCodeLine{24     Serial2.print(\textcolor{stringliteral}{", R:"});}
+\DoxyCodeLine{25     Serial2.print(\mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{countRight}});}
+\DoxyCodeLine{26     Serial2.print(\textcolor{stringliteral}{", Steps; Overall:"});}
+\DoxyCodeLine{27     Serial2.print(\mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}});}
+\DoxyCodeLine{28     Serial2.print(\textcolor{stringliteral}{", Steps; Motion:"});}
+\DoxyCodeLine{29     Serial2.print(\mbox{\hyperlink{a00029_a57ae21281c6035a6e05bad5e2a40143d}{stepsMotion}});}
+\DoxyCodeLine{30     Serial2.print(\textcolor{stringliteral}{", PWM; L:"});}
+\DoxyCodeLine{31     Serial2.print(\mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwmLeft}});}
+\DoxyCodeLine{32     Serial2.print(\textcolor{stringliteral}{", R:"});}
+\DoxyCodeLine{33     Serial2.print(\mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwmRight}});}
+\DoxyCodeLine{34     Serial2.println();}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+
+
+References count\+Left, count\+Right, current\+Motion, motion\+Text(), pwm\+Left, pwm\+Right, steps\+Motion, and steps\+Overall.
+

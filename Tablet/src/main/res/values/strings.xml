@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">tdf02-145_tablet</string>
+  <string name="game_view_content_description">Game view</string>
+  <string name="REMOTE_UUID">93e461cc-80a6-44860-af1d-8e00fa330f04</string>
+  <string name="BODY_UUID">00001101-0000-1000-8000-00805F9B34FB</string>
+  <string name="ROBOCHOTU_FACE">ROBOCHOTU_FACE</string>
+  <string name="ROBOCHOTU_BODY">ROBOCHOTU_BODY</string>
+  <string name="NULL_NAME_ERROR">Unable to fetch name of this device</string>\
+
+  <!-- SPECIAL CHARACTERS -->
+  <string name="TERMINATOR">#</string>
+  <string name="SEPARATOR">_</string>
+
+  <!--UNITY OBJECT NAMES-->
+  <string name="MAIN_CAMERA_OBJECT">Main Camera</string>
+  <string name="MOUTH_OBJECT">mouth</string>
+  <string name="EYEBROWS_OBJECT">eyebrows</string>
+  <string name="EYELIDS_OBJECT">eyelids</string>
+  <string name="TEAR_OBJECT">tear</string>
+  <string name="OUCH_ZONE">ouch_zone</string>
+
+  <!--UNITY FUNCTION NAMES-->
+  <string name="CHANGE_BACKGROUND_COLOR_FUNCTION">ChangeBackgroundColor</string>
+  <string name="SET_EMOTION_FUNCTION">SetEmotion</string>
+  <string name="SET_SPEAKING_FUNCTION">SetSpeaking</string>
+  <string name="SET_EYE_POKE_ENABLED_STATE_FUNCTION">SetEyePokeEnabledState</string>
+  <string name="GO_TO_SLEEP_FUNCTION">GoToSleep</string>
+
+  <!--UNITY FUNCTION FIXED ARGUMENTS-->
+  <string name="START_SPEAKING">START</string>
+  <string name="STOP_SPEAKING">STOP</string>
+  <string name="TRUE">TRUE</string>
+  <string name="FALSE">FALSE</string>
+
+</resources>

@@ -1,0 +1,68 @@
+\hypertarget{a00014}{}\doxysection{P\+I\+D\+\_\+\+Initial.\+ino File Reference}
+\label{a00014}\index{PID\_Initial.ino@{PID\_Initial.ino}}
+
+
+Sets up the P\+ID algorithm.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00014_a3f03669d18fcaa35fca309f11e06c84a}{P\+I\+D\+\_\+initial}} ()
+\begin{DoxyCompactList}\small\item\em sets up P\+ID \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the P\+ID algorithm. 
+
+Contains one function. Initializes pins and interrupt events from encoder needed for the P\+ID algorithm. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00014_a3f03669d18fcaa35fca309f11e06c84a}\label{a00014_a3f03669d18fcaa35fca309f11e06c84a}} 
+\index{PID\_Initial.ino@{PID\_Initial.ino}!PID\_initial@{PID\_initial}}
+\index{PID\_initial@{PID\_initial}!PID\_Initial.ino@{PID\_Initial.ino}}
+\doxysubsubsection{\texorpdfstring{PID\_initial()}{PID\_initial()}}
+{\footnotesize\ttfamily void P\+I\+D\+\_\+initial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sets up P\+ID 
+
+\begin{DoxyItemize}
+\item Sets the Arduino pins connected to E\+NA, E\+NB, I\+N1, I\+N2, I\+N3 and I\+N4 to output. \item Sets the Arduino pins connected to encoders to input. \item Sets up interrupts on the encoder pins (these can only be set to specific pins on the Board). The interrupt is triggered on the R\+I\+S\+I\+NG edge of the signal. Functions are called on this interrupt event. \item Sets the \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} objects left\+P\+ID and right\+P\+ID to have a time step in milliseconds for the P\+ID calculation.\end{DoxyItemize}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file P\+I\+D\+\_\+\+Initial.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                    \{}
+\DoxyCodeLine{18     pinMode(\mbox{\hyperlink{a00029_a7df9782fe4d6fd71743442906e5309fc}{motor\_ENA}}, OUTPUT);}
+\DoxyCodeLine{19     pinMode(\mbox{\hyperlink{a00029_ad17a728e9698d8a783d5fb1c807bf157}{motor\_ENB}}, OUTPUT);}
+\DoxyCodeLine{20     pinMode(\mbox{\hyperlink{a00029_a06eddde23b0f28eaaec9feda5d5749e3}{motor\_IN1}}, OUTPUT);}
+\DoxyCodeLine{21     pinMode(\mbox{\hyperlink{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}{motor\_IN2}}, OUTPUT);}
+\DoxyCodeLine{22     pinMode(\mbox{\hyperlink{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}{motor\_IN3}}, OUTPUT);}
+\DoxyCodeLine{23     pinMode(\mbox{\hyperlink{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}{motor\_IN4}}, OUTPUT);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     pinMode(\mbox{\hyperlink{a00029_a6f58ca8ab8784a919ec06295ae2d2c3b}{encoder\_L\_C1}}, INPUT);}
+\DoxyCodeLine{26     pinMode(\mbox{\hyperlink{a00029_a6d7f13f51cc92dda88d112ad7e78be0f}{encoder\_R\_C1}}, INPUT);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     attachInterrupt(digitalPinToInterrupt(\mbox{\hyperlink{a00029_a6f58ca8ab8784a919ec06295ae2d2c3b}{encoder\_L\_C1}}), \mbox{\hyperlink{a00005_a7fe64b873a78523c1799fe839995dab0}{encoderLeft}}, RISING);}
+\DoxyCodeLine{29     attachInterrupt(digitalPinToInterrupt(\mbox{\hyperlink{a00029_a6d7f13f51cc92dda88d112ad7e78be0f}{encoder\_R\_C1}}), \mbox{\hyperlink{a00005_a2a812ca6642ff8f9469593a73650d4b3}{encoderRight}}, RISING);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \mbox{\hyperlink{a00029_a1706bf6cbdcb567626089276b658bcb0}{leftPID}}.setTimeStep(4);}
+\DoxyCodeLine{32     \mbox{\hyperlink{a00029_a3a6111ebbd586d7b3a0807bcd4072870}{rightPID}}.setTimeStep(4);}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+
+
+References encoder\+\_\+\+L\+\_\+\+C1, encoder\+\_\+\+R\+\_\+\+C1, encoder\+Left(), encoder\+Right(), left\+P\+ID, motor\+\_\+\+E\+NA, motor\+\_\+\+E\+NB, motor\+\_\+\+I\+N1, motor\+\_\+\+I\+N2, motor\+\_\+\+I\+N3, motor\+\_\+\+I\+N4, and right\+P\+ID.
+
+
+
+Referenced by setup().
+

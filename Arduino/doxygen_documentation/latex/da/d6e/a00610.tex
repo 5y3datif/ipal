@@ -1,0 +1,245 @@
+\hypertarget{a00610}{}\doxysection{Var\+Speed\+Servo Class Reference}
+\label{a00610}\index{VarSpeedServo@{VarSpeedServo}}
+
+
+{\ttfamily \#include \char`\"{}Var\+Speed\+Servo.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00610_a86c92f6c01950a47ca8035e4f7352aba}{Var\+Speed\+Servo}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_aa5b9c26ff086f34a7dc23996132278b4}{attach}} (int pin)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_a41fc06b6ff1b13f81d73a340ed5c716a}{attach}} (int pin, int \mbox{\hyperlink{a00610_a2080416857712d4764dbd5635f86c951}{min}}, int \mbox{\hyperlink{a00610_a3cbdd7d30718b8ee1207f805b68967c2}{max}})
+\item 
+void \mbox{\hyperlink{a00610_ac295bade8aee589f6718dfa79edc2a34}{detach}} ()
+\item 
+void \mbox{\hyperlink{a00610_a25d1931bc29d014446294ab8dc470f2a}{write}} (int value)
+\item 
+void \mbox{\hyperlink{a00610_aae4a1f6ef6ea3393512e28fa0332e987}{write}} (int value, uint8\+\_\+t speed)
+\item 
+void \mbox{\hyperlink{a00610_aa17de04facd017d5defe60bf0712a469}{write}} (int value, uint8\+\_\+t speed, bool \mbox{\hyperlink{a00610_aa3b21853f890838c88d047d6c2786917}{wait}})
+\item 
+void \mbox{\hyperlink{a00610_a59d10699d43c8763ce79e6f6af324ee8}{write\+Microseconds}} (int value)
+\item 
+void \mbox{\hyperlink{a00610_aec2e2444eb2eccad0c8260bcaad81812}{slowmove}} (int value, uint8\+\_\+t speed)
+\item 
+void \mbox{\hyperlink{a00610_a8c528baf37154d347366083f0f816846}{stop}} ()
+\item 
+int \mbox{\hyperlink{a00610_aaab5dab5b969a87f538242e524431637}{read}} ()
+\item 
+int \mbox{\hyperlink{a00610_a791f0adb43c422b0a797f5b1adef7bf4}{read\+Microseconds}} ()
+\item 
+bool \mbox{\hyperlink{a00610_aaade8a95983dfa580d7a983e0e28b8e7}{attached}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_ab77cf37fa4dd9bc30fd011774b2f3fbe}{sequence\+Play}} (\mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}} sequence\+In\mbox{[}$\,$\mbox{]}, uint8\+\_\+t num\+Positions, bool \mbox{\hyperlink{a00032_afe461d27b9c48d5921c00d521181f12f}{loop}}, uint8\+\_\+t start\+Pos)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_ad88c995caa8b678e3fb4d9b3b4b651a8}{sequence\+Play}} (\mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}} sequence\+In\mbox{[}$\,$\mbox{]}, uint8\+\_\+t num\+Positions)
+\item 
+void \mbox{\hyperlink{a00610_ae67f05876b3b45b007f263811f1390ba}{sequence\+Stop}} ()
+\item 
+void \mbox{\hyperlink{a00610_aa3b21853f890838c88d047d6c2786917}{wait}} ()
+\item 
+bool \mbox{\hyperlink{a00610_a53aa4cac51ad23ff5184d9b2023140ce}{is\+Moving}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_ab6303f9fd1b7237a927fbcedb8df440f}{servo\+Index}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{a00610_a2080416857712d4764dbd5635f86c951}{min}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{a00610_a3cbdd7d30718b8ee1207f805b68967c2}{max}}
+\item 
+\mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}} $\ast$ \mbox{\hyperlink{a00610_a33ae5f50df79a38c092d92d6e1aedc11}{cur\+Sequence}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{a00610_addd6d53f2f28f9c43cce77fa5e507ee9}{cur\+Seq\+Position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 148 of file Var\+Speed\+Servo.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a00610_a86c92f6c01950a47ca8035e4f7352aba}\label{a00610_a86c92f6c01950a47ca8035e4f7352aba}} 
+\index{VarSpeedServo@{VarSpeedServo}!VarSpeedServo@{VarSpeedServo}}
+\index{VarSpeedServo@{VarSpeedServo}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{VarSpeedServo()}{VarSpeedServo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00610}{Var\+Speed\+Servo}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00610_aa5b9c26ff086f34a7dc23996132278b4}\label{a00610_aa5b9c26ff086f34a7dc23996132278b4}} 
+\index{VarSpeedServo@{VarSpeedServo}!attach@{attach}}
+\index{attach@{attach}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t attach (\begin{DoxyParamCaption}\item[{int}]{pin }\end{DoxyParamCaption})}
+
+
+
+Referenced by setup().
+
+\mbox{\Hypertarget{a00610_a41fc06b6ff1b13f81d73a340ed5c716a}\label{a00610_a41fc06b6ff1b13f81d73a340ed5c716a}} 
+\index{VarSpeedServo@{VarSpeedServo}!attach@{attach}}
+\index{attach@{attach}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t attach (\begin{DoxyParamCaption}\item[{int}]{pin,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_aaade8a95983dfa580d7a983e0e28b8e7}\label{a00610_aaade8a95983dfa580d7a983e0e28b8e7}} 
+\index{VarSpeedServo@{VarSpeedServo}!attached@{attached}}
+\index{attached@{attached}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{attached()}{attached()}}
+{\footnotesize\ttfamily bool attached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_ac295bade8aee589f6718dfa79edc2a34}\label{a00610_ac295bade8aee589f6718dfa79edc2a34}} 
+\index{VarSpeedServo@{VarSpeedServo}!detach@{detach}}
+\index{detach@{detach}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily void detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_a53aa4cac51ad23ff5184d9b2023140ce}\label{a00610_a53aa4cac51ad23ff5184d9b2023140ce}} 
+\index{VarSpeedServo@{VarSpeedServo}!isMoving@{isMoving}}
+\index{isMoving@{isMoving}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{isMoving()}{isMoving()}}
+{\footnotesize\ttfamily bool is\+Moving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_aaab5dab5b969a87f538242e524431637}\label{a00610_aaab5dab5b969a87f538242e524431637}} 
+\index{VarSpeedServo@{VarSpeedServo}!read@{read}}
+\index{read@{read}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_a791f0adb43c422b0a797f5b1adef7bf4}\label{a00610_a791f0adb43c422b0a797f5b1adef7bf4}} 
+\index{VarSpeedServo@{VarSpeedServo}!readMicroseconds@{readMicroseconds}}
+\index{readMicroseconds@{readMicroseconds}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{readMicroseconds()}{readMicroseconds()}}
+{\footnotesize\ttfamily int read\+Microseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_ad88c995caa8b678e3fb4d9b3b4b651a8}\label{a00610_ad88c995caa8b678e3fb4d9b3b4b651a8}} 
+\index{VarSpeedServo@{VarSpeedServo}!sequencePlay@{sequencePlay}}
+\index{sequencePlay@{sequencePlay}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{sequencePlay()}{sequencePlay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t sequence\+Play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}}}]{sequence\+In\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{num\+Positions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_ab77cf37fa4dd9bc30fd011774b2f3fbe}\label{a00610_ab77cf37fa4dd9bc30fd011774b2f3fbe}} 
+\index{VarSpeedServo@{VarSpeedServo}!sequencePlay@{sequencePlay}}
+\index{sequencePlay@{sequencePlay}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{sequencePlay()}{sequencePlay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t sequence\+Play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}}}]{sequence\+In\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{num\+Positions,  }\item[{bool}]{loop,  }\item[{uint8\+\_\+t}]{start\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_ae67f05876b3b45b007f263811f1390ba}\label{a00610_ae67f05876b3b45b007f263811f1390ba}} 
+\index{VarSpeedServo@{VarSpeedServo}!sequenceStop@{sequenceStop}}
+\index{sequenceStop@{sequenceStop}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{sequenceStop()}{sequenceStop()}}
+{\footnotesize\ttfamily void sequence\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_aec2e2444eb2eccad0c8260bcaad81812}\label{a00610_aec2e2444eb2eccad0c8260bcaad81812}} 
+\index{VarSpeedServo@{VarSpeedServo}!slowmove@{slowmove}}
+\index{slowmove@{slowmove}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{slowmove()}{slowmove()}}
+{\footnotesize\ttfamily void slowmove (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{uint8\+\_\+t}]{speed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_a8c528baf37154d347366083f0f816846}\label{a00610_a8c528baf37154d347366083f0f816846}} 
+\index{VarSpeedServo@{VarSpeedServo}!stop@{stop}}
+\index{stop@{stop}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_aa3b21853f890838c88d047d6c2786917}\label{a00610_aa3b21853f890838c88d047d6c2786917}} 
+\index{VarSpeedServo@{VarSpeedServo}!wait@{wait}}
+\index{wait@{wait}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_a25d1931bc29d014446294ab8dc470f2a}\label{a00610_a25d1931bc29d014446294ab8dc470f2a}} 
+\index{VarSpeedServo@{VarSpeedServo}!write@{write}}
+\index{write@{write}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void write (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Referenced by setup().
+
+\mbox{\Hypertarget{a00610_aae4a1f6ef6ea3393512e28fa0332e987}\label{a00610_aae4a1f6ef6ea3393512e28fa0332e987}} 
+\index{VarSpeedServo@{VarSpeedServo}!write@{write}}
+\index{write@{write}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void write (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{uint8\+\_\+t}]{speed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_aa17de04facd017d5defe60bf0712a469}\label{a00610_aa17de04facd017d5defe60bf0712a469}} 
+\index{VarSpeedServo@{VarSpeedServo}!write@{write}}
+\index{write@{write}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void write (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{uint8\+\_\+t}]{speed,  }\item[{bool}]{wait }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00610_a59d10699d43c8763ce79e6f6af324ee8}\label{a00610_a59d10699d43c8763ce79e6f6af324ee8}} 
+\index{VarSpeedServo@{VarSpeedServo}!writeMicroseconds@{writeMicroseconds}}
+\index{writeMicroseconds@{writeMicroseconds}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{writeMicroseconds()}{writeMicroseconds()}}
+{\footnotesize\ttfamily void write\+Microseconds (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{a00610_addd6d53f2f28f9c43cce77fa5e507ee9}\label{a00610_addd6d53f2f28f9c43cce77fa5e507ee9}} 
+\index{VarSpeedServo@{VarSpeedServo}!curSeqPosition@{curSeqPosition}}
+\index{curSeqPosition@{curSeqPosition}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{curSeqPosition}{curSeqPosition}}
+{\footnotesize\ttfamily uint8\+\_\+t cur\+Seq\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 179 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00610_a33ae5f50df79a38c092d92d6e1aedc11}\label{a00610_a33ae5f50df79a38c092d92d6e1aedc11}} 
+\index{VarSpeedServo@{VarSpeedServo}!curSequence@{curSequence}}
+\index{curSequence@{curSequence}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{curSequence}{curSequence}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}}$\ast$ cur\+Sequence\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 178 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00610_a3cbdd7d30718b8ee1207f805b68967c2}\label{a00610_a3cbdd7d30718b8ee1207f805b68967c2}} 
+\index{VarSpeedServo@{VarSpeedServo}!max@{max}}
+\index{max@{max}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily int8\+\_\+t max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 177 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00610_a2080416857712d4764dbd5635f86c951}\label{a00610_a2080416857712d4764dbd5635f86c951}} 
+\index{VarSpeedServo@{VarSpeedServo}!min@{min}}
+\index{min@{min}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily int8\+\_\+t min\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 176 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00610_ab6303f9fd1b7237a927fbcedb8df440f}\label{a00610_ab6303f9fd1b7237a927fbcedb8df440f}} 
+\index{VarSpeedServo@{VarSpeedServo}!servoIndex@{servoIndex}}
+\index{servoIndex@{servoIndex}!VarSpeedServo@{VarSpeedServo}}
+\doxysubsubsection{\texorpdfstring{servoIndex}{servoIndex}}
+{\footnotesize\ttfamily uint8\+\_\+t servo\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 175 of file Var\+Speed\+Servo.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00035}{Var\+Speed\+Servo.\+h}}\end{DoxyCompactItemize}

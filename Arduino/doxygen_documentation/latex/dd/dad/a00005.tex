@@ -1,0 +1,89 @@
+\hypertarget{a00005}{}\doxysection{encoder\+Functions.\+ino File Reference}
+\label{a00005}\index{encoderFunctions.ino@{encoderFunctions.ino}}
+
+
+Interrupt functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00005_a7fe64b873a78523c1799fe839995dab0}{encoder\+Left}} ()
+\begin{DoxyCompactList}\small\item\em Interrupt function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_a2a812ca6642ff8f9469593a73650d4b3}{encoder\+Right}} ()
+\begin{DoxyCompactList}\small\item\em Interrupt function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupt functions. 
+
+This file contains the functions that get called when the interrupt event occurs because of a rising signal from the encoders in the motors. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00005_a7fe64b873a78523c1799fe839995dab0}\label{a00005_a7fe64b873a78523c1799fe839995dab0}} 
+\index{encoderFunctions.ino@{encoderFunctions.ino}!encoderLeft@{encoderLeft}}
+\index{encoderLeft@{encoderLeft}!encoderFunctions.ino@{encoderFunctions.ino}}
+\doxysubsubsection{\texorpdfstring{encoderLeft()}{encoderLeft()}}
+{\footnotesize\ttfamily void encoder\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Interrupt function. 
+
+This function gets called when a rising pulse is received from the encoder on the left motor. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file encoder\+Functions.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                    \{}
+\DoxyCodeLine{13   \mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{countLeft}}++;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15   \textcolor{comment}{// Average of countLeft and countRight //}}
+\DoxyCodeLine{16   \mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}} = (\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{countLeft}} + \mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{countRight}}) / 2;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+
+
+References count\+Left, count\+Right, and steps\+Overall.
+
+
+
+Referenced by P\+I\+D\+\_\+initial().
+
+\mbox{\Hypertarget{a00005_a2a812ca6642ff8f9469593a73650d4b3}\label{a00005_a2a812ca6642ff8f9469593a73650d4b3}} 
+\index{encoderFunctions.ino@{encoderFunctions.ino}!encoderRight@{encoderRight}}
+\index{encoderRight@{encoderRight}!encoderFunctions.ino@{encoderFunctions.ino}}
+\doxysubsubsection{\texorpdfstring{encoderRight()}{encoderRight()}}
+{\footnotesize\ttfamily void encoder\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Interrupt function. 
+
+This function gets called when a rising pulse is received from the encoder on the right motor. 
+
+Definition at line 23 of file encoder\+Functions.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                     \{}
+\DoxyCodeLine{24   \mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{countRight}}++;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{comment}{// Average of countLeft and countRight //}}
+\DoxyCodeLine{27   \mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}} = (\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{countLeft}} + \mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{countRight}}) / 2;}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+
+
+References count\+Left, count\+Right, and steps\+Overall.
+
+
+
+Referenced by P\+I\+D\+\_\+initial().
+

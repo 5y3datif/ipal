@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">tdf02-145_remote</string>
+    <string name="UUID">93e461cc-80a6-44860-af1d-8e00fa330f04</string>
+    <string name="ROBOCHOTU_REMOTE">ROBOCHOTU_REMOTE</string>
+    <string name="ROBOCHOTU_FACE">ROBOCHOTU_FACE</string>
+    <string name="NULL_NAME_ERROR">Unable to fetch name of this device</string>\
+
+    <string name="tab_text_1">٩(^‿^)۶</string>
+    <string name="tab_text_2">ᕕ( ᐛ )ᕗ</string>
+    <string name="tab_text_3">（ ﾟДﾟ）</string>
+    <string name="tab_text_4">(^O^)</string>
+
+    <string name="happy">Happy</string>
+    <string name="sad">Sad</string>
+    <string name="angry">Angry</string>
+    <string name="idle">Idle</string>
+    <string name="surprised">Surprised</string>
+
+    <string name="SPEED_SLIDER_INFO">Speaking speed at </string>
+
+    <string name="empty"></string>
+
+    <string name="HI">Hi</string>
+    <string name="HELLO">Hello</string>
+    <string name="HOW_ARE_YOU">How are you?</string>
+    <string name="WHATS_YOUR_NAME">What is your name?</string>
+    <string name="MY_NAME_IS">My name is Robo-Chotu</string>
+    <string name="IM_YOUR_FRIEND">I am your friend</string>
+    <string name="THANK_YOU">Thank you</string>
+    <string name="YOU_ARE_WELCOME">You are welcome</string>
+    <string name="VERY_GOOD">Very good</string>
+    <string name="GOOD_JOB">Good job</string>
+    <string name="WOW">Wow</string>
+    <string name="BYE">Bye Bye</string>
+    <string name="FINISH">Finish</string>
+    <string name="YES">Yes</string>
+    <string name="NO">No</string>
+
+
+    <string name="editText_Hint">Type here </string>
+    <string name="empty_message_error">Message is empty!</string>
+    <string name="communication_error">There was some communication issue. Please Try again!</string>
+
+    <string name="CONNECTION_TO_DEVICE_SUCCESSFUL">Bluetooth connected successfully</string>
+    <string name="CONNECTION_TO_DEVICE_UNSUCCESSFUL">Could not establish connection</string>
+    <string name="NO_PAIRED_DEVICES">You have no paired Bluetooth devices</string>
+    <string name="PARTICULAR_DEVICE_NOT_PAIRED">The body HC-05 is not paired</string>
+
+
+
+    <string name="BT_STATE_OFF_TEXT">Bluetooth is off</string>
+    <string name="BT_STATE_ON_TEXT">Bluetooth is on</string>
+    <string name="BT_STATE_TURNING_OFF_TEXT">Bluetooth is turning off...</string>
+    <string name="BT_STATE_TURNING_ON_TEXT">Bluetooth is turning on...</string>
+
+    <string name="BT_CONNECTION_STATE_CONNECTED">Connected to body</string>
+    <string name="BT_CONNECTION_STATE_CONNECTING">Connecting to body...</string>
+    <string name="BT_CONNECTION_STATE_DISCONNECTED">Disconnected from body</string>
+    <string name="BT_CONNECTION_STATE_DISCONNECTING">Disconnecting from body...</string>
+
+
+    <string name="MAC_ADDRESS">00:18:E4:34:EF:E1</string>
+    <string name="TESTING_MAC_ADDRESS_1">00:18:E5:03:8F:A1</string>
+    <string name="TESTING_MAC_ADDRESS_2">00:18:E4:40:00:06</string>
+
+    <!-- CLASSIFIERS -->
+    <string name="EMOTION_CLASSIFIER">E</string>
+    <string name="SPEAK_OUT_CLASSIFIER">G</string>
+    <string name="POKE_SLEEP_CLASSIFIER">C</string>
+    <string name="FORWARD_MOVEMENT_CLASSIFIER">F</string>
+    <string name="BACKWARD_MOVEMENT_CLASSIFIER">B</string>
+    <string name="LEFT_MOVEMENT_CLASSIFIER">L</string>
+    <string name="RIGHT_MOVEMENT_CLASSIFIER">R</string>
+    <string name="STOP_MOVEMENT_CLASSIFIER">STOP</string>
+
+    <!-- SPECIAL CHARACTERS -->
+    <string name="TERMINATOR">#</string>
+    <string name="SEPARATOR">_</string>
+
+
+    <!-- INSTRUCTION -->
+    <string name="POKE_INSTRUCTION">POKE</string>
+
+
+    <!-- MODIFIERS -->
+    <string name="ENABLE">ENABLE</string>
+    <string name="DISABLE">DISABLE</string>
+</resources>

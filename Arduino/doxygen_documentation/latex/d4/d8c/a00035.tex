@@ -1,0 +1,259 @@
+\hypertarget{a00035}{}\doxysection{Var\+Speed\+Servo.\+h File Reference}
+\label{a00035}\index{VarSpeedServo.h@{VarSpeedServo.h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00035_d7/dd2/a00598}{Servo\+Pin\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00035_d5/d0a/a00602}{servo\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00035_d8/d00/a00606}{servo\+Sequence\+Point}}
+\item 
+class \mbox{\hyperlink{a00610}{Var\+Speed\+Servo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00035_ab187febb2d332254f49068c80dbb22d7}{\+\_\+use\+Timer1}}
+\item 
+\#define \mbox{\hyperlink{a00035_a5a7f279982da0486c1d454cc850bd8a9}{Var\+Speed\+Servo\+\_\+\+V\+E\+R\+S\+I\+ON}}~2
+\item 
+\#define \mbox{\hyperlink{a00035_ad95c8286fc30ece77d632ad00a94d80e}{M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}}~544
+\item 
+\#define \mbox{\hyperlink{a00035_a57a10261e6511f97317cee9076692315}{M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}}~2400
+\item 
+\#define \mbox{\hyperlink{a00035_a7eada57cb49e7b1766a813e4635d79bd}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}}~1500
+\item 
+\#define \mbox{\hyperlink{a00035_adfe85923c58edb0cfa15a0d026d7ee74}{R\+E\+F\+R\+E\+S\+H\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~20000
+\item 
+\#define \mbox{\hyperlink{a00035_af16be8a4945638887eae35a30aa702c0}{S\+E\+R\+V\+O\+S\+\_\+\+P\+E\+R\+\_\+\+T\+I\+M\+ER}}~12
+\item 
+\#define \mbox{\hyperlink{a00035_a4259c40a55e489ed25c9f3cbb3be05ab}{M\+A\+X\+\_\+\+S\+E\+R\+V\+OS}}~(\mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}{\+\_\+\+Nbr\+\_\+16timers}}  $\ast$ \mbox{\hyperlink{a00035_af16be8a4945638887eae35a30aa702c0}{S\+E\+R\+V\+O\+S\+\_\+\+P\+E\+R\+\_\+\+T\+I\+M\+ER}})
+\item 
+\#define \mbox{\hyperlink{a00035_ac4ebf3d89da7ee64b1f4726099b6d6ec}{I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+R\+VO}}~255
+\item 
+\#define \mbox{\hyperlink{a00035_a6126cd69339072a74f711725c9e7bc27}{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+T\+OP}}~255
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887}{timer16\+\_\+\+Sequence\+\_\+t}} \{ \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a79ea1c528ccb762bc8533c2b5849026d}{\+\_\+timer1}}, 
+\mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}{\+\_\+\+Nbr\+\_\+16timers}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Data Structure Documentation}
+\index{ServoPin\_t@{ServoPin\_t}}\label{a00598}
+\Hypertarget{a00035_a00598}
+\doxysubsubsection{struct Servo\+Pin\+\_\+t}
+
+
+Definition at line 130 of file Var\+Speed\+Servo.\+h.
+
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{a00035_a1f90820d1554c5f2d1ce29bc20689866}\label{a00035_a1f90820d1554c5f2d1ce29bc20689866}} 
+uint8\_t&
+isActive:1&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_a82e2fa1706164ccc1fa96d296183021c}\label{a00035_a82e2fa1706164ccc1fa96d296183021c}} 
+uint8\_t&
+nbr:6&
+\\
+\hline
+
+\end{DoxyFields}
+\index{servo\_t@{servo\_t}}\label{a00602}
+\Hypertarget{a00035_a00602}
+\doxysubsubsection{struct servo\+\_\+t}
+
+
+Definition at line 135 of file Var\+Speed\+Servo.\+h.
+
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{a00035_aeb39d768c41a5bd4cb01e33811ddab9e}\label{a00035_aeb39d768c41a5bd4cb01e33811ddab9e}} 
+\mbox{\hyperlink{a00035_d7/dd2/a00598}{ServoPin\_t}}&
+Pin&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_aae32029df16a54aa86c0aec2df9f7bb7}\label{a00035_aae32029df16a54aa86c0aec2df9f7bb7}} 
+uint8\_t&
+speed&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_af10772e6d304a2ff59891323f52eb170}\label{a00035_af10772e6d304a2ff59891323f52eb170}} 
+unsigned int&
+target&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_ad19c50a3bd648e4b5268821d7585c747}\label{a00035_ad19c50a3bd648e4b5268821d7585c747}} 
+unsigned int&
+ticks&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_a2a5a27690c40c531d0a8385dc4f66a95}\label{a00035_a2a5a27690c40c531d0a8385dc4f66a95}} 
+unsigned int&
+value&
+\\
+\hline
+
+\end{DoxyFields}
+\index{servoSequencePoint@{servoSequencePoint}}\label{a00606}
+\Hypertarget{a00035_a00606}
+\doxysubsubsection{struct servo\+Sequence\+Point}
+
+
+Definition at line 143 of file Var\+Speed\+Servo.\+h.
+
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{a00035_a1e1320cfd39f6febcf8e4eb2b542f424}\label{a00035_a1e1320cfd39f6febcf8e4eb2b542f424}} 
+uint8\_t&
+position&
+\\
+\hline
+
+\mbox{\Hypertarget{a00035_aae32029df16a54aa86c0aec2df9f7bb7}\label{a00035_aae32029df16a54aa86c0aec2df9f7bb7}} 
+uint8\_t&
+speed&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00035_ab187febb2d332254f49068c80dbb22d7}\label{a00035_ab187febb2d332254f49068c80dbb22d7}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!\_useTimer1@{\_useTimer1}}
+\index{\_useTimer1@{\_useTimer1}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{\_useTimer1}{\_useTimer1}}
+{\footnotesize\ttfamily \#define \+\_\+use\+Timer1}
+
+
+
+Definition at line 111 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_a6126cd69339072a74f711725c9e7bc27}\label{a00035_a6126cd69339072a74f711725c9e7bc27}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!CURRENT\_SEQUENCE\_STOP@{CURRENT\_SEQUENCE\_STOP}}
+\index{CURRENT\_SEQUENCE\_STOP@{CURRENT\_SEQUENCE\_STOP}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{CURRENT\_SEQUENCE\_STOP}{CURRENT\_SEQUENCE\_STOP}}
+{\footnotesize\ttfamily \#define C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+Q\+U\+E\+N\+C\+E\+\_\+\+S\+T\+OP~255}
+
+
+
+Definition at line 127 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_a7eada57cb49e7b1766a813e4635d79bd}\label{a00035_a7eada57cb49e7b1766a813e4635d79bd}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!DEFAULT\_PULSE\_WIDTH@{DEFAULT\_PULSE\_WIDTH}}
+\index{DEFAULT\_PULSE\_WIDTH@{DEFAULT\_PULSE\_WIDTH}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PULSE\_WIDTH}{DEFAULT\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH~1500}
+
+
+
+Definition at line 119 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_ac4ebf3d89da7ee64b1f4726099b6d6ec}\label{a00035_ac4ebf3d89da7ee64b1f4726099b6d6ec}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!INVALID\_SERVO@{INVALID\_SERVO}}
+\index{INVALID\_SERVO@{INVALID\_SERVO}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{INVALID\_SERVO}{INVALID\_SERVO}}
+{\footnotesize\ttfamily \#define I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+R\+VO~255}
+
+
+
+Definition at line 125 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_a57a10261e6511f97317cee9076692315}\label{a00035_a57a10261e6511f97317cee9076692315}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!MAX\_PULSE\_WIDTH@{MAX\_PULSE\_WIDTH}}
+\index{MAX\_PULSE\_WIDTH@{MAX\_PULSE\_WIDTH}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PULSE\_WIDTH}{MAX\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH~2400}
+
+
+
+Definition at line 118 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_a4259c40a55e489ed25c9f3cbb3be05ab}\label{a00035_a4259c40a55e489ed25c9f3cbb3be05ab}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!MAX\_SERVOS@{MAX\_SERVOS}}
+\index{MAX\_SERVOS@{MAX\_SERVOS}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SERVOS}{MAX\_SERVOS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+S\+E\+R\+V\+OS~(\mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}{\+\_\+\+Nbr\+\_\+16timers}}  $\ast$ \mbox{\hyperlink{a00035_af16be8a4945638887eae35a30aa702c0}{S\+E\+R\+V\+O\+S\+\_\+\+P\+E\+R\+\_\+\+T\+I\+M\+ER}})}
+
+
+
+Definition at line 123 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_ad95c8286fc30ece77d632ad00a94d80e}\label{a00035_ad95c8286fc30ece77d632ad00a94d80e}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!MIN\_PULSE\_WIDTH@{MIN\_PULSE\_WIDTH}}
+\index{MIN\_PULSE\_WIDTH@{MIN\_PULSE\_WIDTH}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{MIN\_PULSE\_WIDTH}{MIN\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH~544}
+
+
+
+Definition at line 117 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_adfe85923c58edb0cfa15a0d026d7ee74}\label{a00035_adfe85923c58edb0cfa15a0d026d7ee74}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!REFRESH\_INTERVAL@{REFRESH\_INTERVAL}}
+\index{REFRESH\_INTERVAL@{REFRESH\_INTERVAL}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{REFRESH\_INTERVAL}{REFRESH\_INTERVAL}}
+{\footnotesize\ttfamily \#define R\+E\+F\+R\+E\+S\+H\+\_\+\+I\+N\+T\+E\+R\+V\+AL~20000}
+
+
+
+Definition at line 120 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_af16be8a4945638887eae35a30aa702c0}\label{a00035_af16be8a4945638887eae35a30aa702c0}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!SERVOS\_PER\_TIMER@{SERVOS\_PER\_TIMER}}
+\index{SERVOS\_PER\_TIMER@{SERVOS\_PER\_TIMER}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{SERVOS\_PER\_TIMER}{SERVOS\_PER\_TIMER}}
+{\footnotesize\ttfamily \#define S\+E\+R\+V\+O\+S\+\_\+\+P\+E\+R\+\_\+\+T\+I\+M\+ER~12}
+
+
+
+Definition at line 122 of file Var\+Speed\+Servo.\+h.
+
+\mbox{\Hypertarget{a00035_a5a7f279982da0486c1d454cc850bd8a9}\label{a00035_a5a7f279982da0486c1d454cc850bd8a9}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!VarSpeedServo\_VERSION@{VarSpeedServo\_VERSION}}
+\index{VarSpeedServo\_VERSION@{VarSpeedServo\_VERSION}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{VarSpeedServo\_VERSION}{VarSpeedServo\_VERSION}}
+{\footnotesize\ttfamily \#define Var\+Speed\+Servo\+\_\+\+V\+E\+R\+S\+I\+ON~2}
+
+
+
+Definition at line 115 of file Var\+Speed\+Servo.\+h.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00035_aa57046a4eafc371d1ae9a7f82f666887}\label{a00035_aa57046a4eafc371d1ae9a7f82f666887}} 
+\index{VarSpeedServo.h@{VarSpeedServo.h}!timer16\_Sequence\_t@{timer16\_Sequence\_t}}
+\index{timer16\_Sequence\_t@{timer16\_Sequence\_t}!VarSpeedServo.h@{VarSpeedServo.h}}
+\doxysubsubsection{\texorpdfstring{timer16\_Sequence\_t}{timer16\_Sequence\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887}{timer16\+\_\+\+Sequence\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_timer1@{\_timer1}!VarSpeedServo.h@{VarSpeedServo.h}}\index{VarSpeedServo.h@{VarSpeedServo.h}!\_timer1@{\_timer1}}}\mbox{\Hypertarget{a00035_aa57046a4eafc371d1ae9a7f82f666887a79ea1c528ccb762bc8533c2b5849026d}\label{a00035_aa57046a4eafc371d1ae9a7f82f666887a79ea1c528ccb762bc8533c2b5849026d}} 
+\+\_\+timer1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_Nbr\_16timers@{\_Nbr\_16timers}!VarSpeedServo.h@{VarSpeedServo.h}}\index{VarSpeedServo.h@{VarSpeedServo.h}!\_Nbr\_16timers@{\_Nbr\_16timers}}}\mbox{\Hypertarget{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}\label{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}} 
+\+\_\+\+Nbr\+\_\+16timers&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 112 of file Var\+Speed\+Servo.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112 \{ \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a79ea1c528ccb762bc8533c2b5849026d}{\_timer1}}, \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887a53f530c6e8ca85b1b3fbd5b21ef207a4}{\_Nbr\_16timers}} \} \mbox{\hyperlink{a00035_aa57046a4eafc371d1ae9a7f82f666887}{timer16\_Sequence\_t}} ;}
+
+\end{DoxyCode}

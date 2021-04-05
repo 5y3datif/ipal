@@ -1,0 +1,267 @@
+\hypertarget{a00002}{}\doxysection{decider.\+ino File Reference}
+\label{a00002}\index{decider.ino@{decider.ino}}
+
+
+Decider of things.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider}} ()
+\begin{DoxyCompactList}\small\item\em Handles all decision matters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a8b8ecdad44ce256ff17f3126ef48512f}{turn\+Left}} (double steps)
+\begin{DoxyCompactList}\small\item\em The robot turns left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a4140fadab07909195b06d17297bacd07}{turn\+Right}} (double steps)
+\begin{DoxyCompactList}\small\item\em The robot turns right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a402d1cc43e1f37dd05bd1f1473ddd97d}{move\+Forward}} (double steps)
+\begin{DoxyCompactList}\small\item\em The robot begins to move forward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00002_a583097544d65cd7f9dd3a5e0b0a2c9df}{move\+Backward}} (double steps)
+\begin{DoxyCompactList}\small\item\em The robot begins to move backwards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decider of things. 
+
+Contains code pertaining to all decision flow for Chotu\textquotesingle{}s locomotion and instruction handling. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00002_a57be357736a33250e0542b2fa3694e6c}\label{a00002_a57be357736a33250e0542b2fa3694e6c}} 
+\index{decider.ino@{decider.ino}!decider@{decider}}
+\index{decider@{decider}!decider.ino@{decider.ino}}
+\doxysubsubsection{\texorpdfstring{decider()}{decider()}}
+{\footnotesize\ttfamily void decider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles all decision matters. 
+
+\begin{DoxyItemize}
+\item Updates steps\+Overall which is the count of steps taken on average by the encoders from the time the robot was started until now \item Breaks the input\+String into its constituent commands \item Interprets what the command means and who is to execute it \item If command pertains to locomotion or servo motion, Arduino handles its \item If command pertains to anything else, it is sent as is to the tablet \item When \mbox{\hyperlink{a00002_a57be357736a33250e0542b2fa3694e6c}{decider()}} is called, it nullifies any previous command.\end{DoxyItemize}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file decider.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                \{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{//stepsMotion stores the steps taken until now (also discards accidental movement readings) //}}
+\DoxyCodeLine{23     \mbox{\hyperlink{a00029_a57ae21281c6035a6e05bad5e2a40143d}{stepsMotion}} = \mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{stepsOverall}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//Holds the command character. For locomotion commands this is the direction to move in.//}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} Direction;                                              }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{comment}{//Holds the locomotion parameter which is in units pertaining to movement.//}}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} LocomotionParameter;                                     }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{//Hold angles for the Yaw and Pitch motors.//}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} YawAngle;                                                }
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} PitchAngle;                           }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{//Holds the status of the PIR sensor?//                   }}
+\DoxyCodeLine{36     \textcolor{keywordtype}{char} PIRstatus;                      }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//eg. "F"\_0200\_090\_045 //                        }}
+\DoxyCodeLine{39     Direction = \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}}.charAt(0);                         }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//eg. F\_"0200"\_090\_045 //  }}
+\DoxyCodeLine{42     LocomotionParameter = (\mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}}.substring(2, 6)).toInt(); }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//eg. F\_0200\_"090\_045 //}}
+\DoxyCodeLine{45     YawAngle = (\mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}}.substring(7, 10)).toInt();           }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{//eg. F\_0200\_090\_"045" //}}
+\DoxyCodeLine{48     PitchAngle = (\mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}}.substring(11, 14)).toInt(); }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{// Stores the input String for a small check later //}}
+\DoxyCodeLine{51     String inputStringStored = \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{//Empties the inputString //}}
+\DoxyCodeLine{54     \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{inputString}} = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{//movehead(YawAngle, PitchAngle); //commented as no servos currently present in Chotu body}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordflow}{switch} (Direction) \{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{case} \textcolor{charliteral}{'F'}:}
+\DoxyCodeLine{60             \mbox{\hyperlink{a00002_a402d1cc43e1f37dd05bd1f1473ddd97d}{moveForward}}(LocomotionParameter);}
+\DoxyCodeLine{61             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62         \textcolor{keywordflow}{case} \textcolor{charliteral}{'B'}:}
+\DoxyCodeLine{63             \mbox{\hyperlink{a00002_a583097544d65cd7f9dd3a5e0b0a2c9df}{moveBackward}}(LocomotionParameter);}
+\DoxyCodeLine{64             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65         \textcolor{keywordflow}{case} \textcolor{charliteral}{'R'}:}
+\DoxyCodeLine{66             \mbox{\hyperlink{a00002_a4140fadab07909195b06d17297bacd07}{turnRight}}(LocomotionParameter);}
+\DoxyCodeLine{67             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{68         \textcolor{keywordflow}{case} \textcolor{charliteral}{'L'}:}
+\DoxyCodeLine{69             \mbox{\hyperlink{a00002_a8b8ecdad44ce256ff17f3126ef48512f}{turnLeft}}(LocomotionParameter);}
+\DoxyCodeLine{70             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71         \textcolor{keywordflow}{case} \textcolor{charliteral}{'E'}:}
+\DoxyCodeLine{72         \textcolor{keywordflow}{case} \textcolor{charliteral}{'G'}:}
+\DoxyCodeLine{73         \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}:}
+\DoxyCodeLine{74         \textcolor{comment}{//Letters that are not locomotion related. Other characters will stop the robot motion. This is a safety feature.//}}
+\DoxyCodeLine{75             \textcolor{keywordflow}{if} (inputStringStored == \textcolor{stringliteral}{"\#"}) \textcolor{comment}{/*checks that it isn't sending an empty command*/} \{}
+\DoxyCodeLine{76             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{77                 Serial1.print(inputStringStored);}
+\DoxyCodeLine{78             \mbox{\hyperlink{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}{stopMotion}}();}
+\DoxyCodeLine{79             \textcolor{comment}{//commented for now as no PIR sensor present in body}}
+\DoxyCodeLine{80             \textcolor{comment}{//    case 'P':}}
+\DoxyCodeLine{81             \textcolor{comment}{//      pirSensor();}}
+\DoxyCodeLine{82             \textcolor{comment}{//      PIRstatus = pirReturn ();}}
+\DoxyCodeLine{83             \textcolor{comment}{//      datatosend = "P\_";}}
+\DoxyCodeLine{84             \textcolor{comment}{//      datatosend += PIRstatus;}}
+\DoxyCodeLine{85             \textcolor{comment}{//      datatosend += "\_000\_000\#";}}
+\DoxyCodeLine{86             \textcolor{comment}{//      Serial1.println(datatosend);}}
+\DoxyCodeLine{87             \textcolor{comment}{//      break;}}
+\DoxyCodeLine{88         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{89             \mbox{\hyperlink{a00026_a8bed2c4ee5634c8587a6bcf18ad05b10}{stopMotion}}();}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+
+
+References input\+String, move\+Backward(), move\+Forward(), steps\+Motion, steps\+Overall, stop\+Motion(), turn\+Left(), and turn\+Right().
+
+
+
+Referenced by serial\+Event(), and serial\+Event2().
+
+\mbox{\Hypertarget{a00002_a583097544d65cd7f9dd3a5e0b0a2c9df}\label{a00002_a583097544d65cd7f9dd3a5e0b0a2c9df}} 
+\index{decider.ino@{decider.ino}!moveBackward@{moveBackward}}
+\index{moveBackward@{moveBackward}!decider.ino@{decider.ino}}
+\doxysubsubsection{\texorpdfstring{moveBackward()}{moveBackward()}}
+{\footnotesize\ttfamily void move\+Backward (\begin{DoxyParamCaption}\item[{double}]{steps }\end{DoxyParamCaption})}
+
+
+
+The robot begins to move backwards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & Motion parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file decider.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                      \{}
+\DoxyCodeLine{123     \mbox{\hyperlink{a00011_aba3346e6df19d7e49b8d8e4573c6e052}{moveDirection}}(\mbox{\hyperlink{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}{Rear}}, steps);}
+\DoxyCodeLine{124 \}}
+
+\end{DoxyCode}
+
+
+Referenced by decider().
+
+\mbox{\Hypertarget{a00002_a402d1cc43e1f37dd05bd1f1473ddd97d}\label{a00002_a402d1cc43e1f37dd05bd1f1473ddd97d}} 
+\index{decider.ino@{decider.ino}!moveForward@{moveForward}}
+\index{moveForward@{moveForward}!decider.ino@{decider.ino}}
+\doxysubsubsection{\texorpdfstring{moveForward()}{moveForward()}}
+{\footnotesize\ttfamily void move\+Forward (\begin{DoxyParamCaption}\item[{double}]{steps }\end{DoxyParamCaption})}
+
+
+
+The robot begins to move forward. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & Motion parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file decider.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                                     \{}
+\DoxyCodeLine{115     \mbox{\hyperlink{a00011_aba3346e6df19d7e49b8d8e4573c6e052}{moveDirection}}(\mbox{\hyperlink{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}{Front}}, steps);}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+
+
+Referenced by decider().
+
+\mbox{\Hypertarget{a00002_a8b8ecdad44ce256ff17f3126ef48512f}\label{a00002_a8b8ecdad44ce256ff17f3126ef48512f}} 
+\index{decider.ino@{decider.ino}!turnLeft@{turnLeft}}
+\index{turnLeft@{turnLeft}!decider.ino@{decider.ino}}
+\doxysubsubsection{\texorpdfstring{turnLeft()}{turnLeft()}}
+{\footnotesize\ttfamily void turn\+Left (\begin{DoxyParamCaption}\item[{double}]{steps }\end{DoxyParamCaption})}
+
+
+
+The robot turns left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & Motion parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file decider.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98                             \{}
+\DoxyCodeLine{99     \mbox{\hyperlink{a00011_aba3346e6df19d7e49b8d8e4573c6e052}{moveDirection}}(\mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}, steps);}
+\DoxyCodeLine{100 \}}
+
+\end{DoxyCode}
+
+
+References Left, and move\+Direction().
+
+
+
+Referenced by decider().
+
+\mbox{\Hypertarget{a00002_a4140fadab07909195b06d17297bacd07}\label{a00002_a4140fadab07909195b06d17297bacd07}} 
+\index{decider.ino@{decider.ino}!turnRight@{turnRight}}
+\index{turnRight@{turnRight}!decider.ino@{decider.ino}}
+\doxysubsubsection{\texorpdfstring{turnRight()}{turnRight()}}
+{\footnotesize\ttfamily void turn\+Right (\begin{DoxyParamCaption}\item[{double}]{steps }\end{DoxyParamCaption})}
+
+
+
+The robot turns right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & Motion parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file decider.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                                   \{}
+\DoxyCodeLine{107     \mbox{\hyperlink{a00011_aba3346e6df19d7e49b8d8e4573c6e052}{moveDirection}}(\mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}, steps);}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+
+
+Referenced by decider().
+

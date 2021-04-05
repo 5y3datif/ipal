@@ -1,0 +1,716 @@
+\hypertarget{a00029}{}\doxysection{T\+D\+F02-\/145\+\_\+\+Arduino.ino File Reference}
+\label{a00029}\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+
+
+Sets everything up.  
+
+
+{\ttfamily \#include $<$Auto\+P\+I\+D.\+h$>$}\newline
+{\ttfamily \#include $<$Var\+Speed\+Servo.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00029_a0718545586768194f244562b82bdf2b5}{robot\+\_\+speed\+\_\+min}}~200
+\item 
+\#define \mbox{\hyperlink{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}{robot\+\_\+speed\+\_\+max}}~255
+\item 
+\#define \mbox{\hyperlink{a00029_aa4729260b732666338dee7d841aa12f3}{KP}}~0.\+012
+\item 
+\#define \mbox{\hyperlink{a00029_ade82752ae1652fdf0df9df7a16ffda29}{KI}}~0.\+03
+\item 
+\#define \mbox{\hyperlink{a00029_ad4f9673d16d231643789f081068d2372}{KD}}~0.\+0001
+\item 
+\#define \mbox{\hyperlink{a00029_a7df9782fe4d6fd71743442906e5309fc}{motor\+\_\+\+E\+NA}}~8
+\item 
+\#define \mbox{\hyperlink{a00029_ad17a728e9698d8a783d5fb1c807bf157}{motor\+\_\+\+E\+NB}}~9
+\item 
+\#define \mbox{\hyperlink{a00029_a06eddde23b0f28eaaec9feda5d5749e3}{motor\+\_\+\+I\+N1}}~11
+\item 
+\#define \mbox{\hyperlink{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}{motor\+\_\+\+I\+N2}}~10
+\item 
+\#define \mbox{\hyperlink{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}{motor\+\_\+\+I\+N3}}~12
+\item 
+\#define \mbox{\hyperlink{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}{motor\+\_\+\+I\+N4}}~13
+\item 
+\#define \mbox{\hyperlink{a00029_a6f58ca8ab8784a919ec06295ae2d2c3b}{encoder\+\_\+\+L\+\_\+\+C1}}~3
+\item 
+\#define \mbox{\hyperlink{a00029_a6d7f13f51cc92dda88d112ad7e78be0f}{encoder\+\_\+\+R\+\_\+\+C1}}~2
+\item 
+\#define \mbox{\hyperlink{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}{Front}}~1
+\item 
+\#define \mbox{\hyperlink{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}{Rear}}~2
+\item 
+\#define \mbox{\hyperlink{a00029_aa0e2fff3ba3947166baa01fec3e727cf}{Right}}~3
+\item 
+\#define \mbox{\hyperlink{a00029_a3f4088077127a9c0f58e9e527966c32f}{Left}}~4
+\item 
+\#define \mbox{\hyperlink{a00029_a24aa6b16345f3a627a8d9452299c2b15}{Stop}}~0
+\item 
+\#define \mbox{\hyperlink{a00029_a991581d134a6f84d55be043b6e34afd7}{Start}}~1
+\item 
+\#define \mbox{\hyperlink{a00029_abe61b07c31c2a3e90576eb4c5d95b024}{CW}}~2
+\item 
+\#define \mbox{\hyperlink{a00029_a8a460b6555077a64fc97f2e7ef47b843}{C\+CW}}~3
+\item 
+\#define \mbox{\hyperlink{a00029_a84a53d150aad7e98a603e0ac99d4cebe}{servo\+Pitch\+Pin}}~6
+\item 
+\#define \mbox{\hyperlink{a00029_a5b0c4ec22bc4adcf6306367bd53bcbdd}{servo\+Yaw\+Pin}}~5
+\item 
+\#define \mbox{\hyperlink{a00029_a74cdacd77908bfc691a11ab71cb4daf1}{servo\+Pitch\+Center}}~70
+\item 
+\#define \mbox{\hyperlink{a00029_a78518ceb368d41f3307c7f73843e3988}{servo\+Yaw\+Center}}~80
+\item 
+\#define \mbox{\hyperlink{a00029_abdf4dbec227d549c106fdde9ac5f8a71}{maxpitchlimit}}~180
+\item 
+\#define \mbox{\hyperlink{a00029_a18ab8e920d1dca913a9076c5f089fbb2}{minpitchlimit}}~55
+\item 
+\#define \mbox{\hyperlink{a00029_a671041972a6f642b0cb6af0ce54909de}{maxyawlimit}}~180
+\item 
+\#define \mbox{\hyperlink{a00029_aeec37b2997cce8e574717bb43abeebff}{minyawlimit}}~00
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00029_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Runs only once when the robot starts up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00029_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Loops constantly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{count\+Left}} = 0
+\begin{DoxyCompactList}\small\item\em Integer to keep count of encoder signals from the left motor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{count\+Right}} = 0
+\begin{DoxyCompactList}\small\item\em Integer to keep count of encoder signals from the right motor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a00029_a46041ff7beea84e89562bb32ef694618}{steps\+Overall}} = 0
+\begin{DoxyCompactList}\small\item\em Integer to keep an average count of encoder signals from the both motors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a00029_a57ae21281c6035a6e05bad5e2a40143d}{steps\+Motion}} = 0
+\begin{DoxyCompactList}\small\item\em Don\textquotesingle{}t remember. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwm\+Left}}
+\begin{DoxyCompactList}\small\item\em P\+WM output for left motor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwm\+Right}}
+\begin{DoxyCompactList}\small\item\em P\+WM output for right motor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{a00029_aec3002d20ea3109416d8345a0f0dd2dc}{current\+Motion}} = 0
+\begin{DoxyCompactList}\small\item\em Integer to contain the present state of locomotion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} \mbox{\hyperlink{a00029_a1706bf6cbdcb567626089276b658bcb0}{left\+P\+ID}} = \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}}(\&\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{count\+Left}}, \&\mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{count\+Right}}, \&\mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwm\+Left}}, \mbox{\hyperlink{a00029_a0718545586768194f244562b82bdf2b5}{robot\+\_\+speed\+\_\+min}}, \mbox{\hyperlink{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}{robot\+\_\+speed\+\_\+max}}, \mbox{\hyperlink{a00029_aa4729260b732666338dee7d841aa12f3}{KP}}, \mbox{\hyperlink{a00029_ade82752ae1652fdf0df9df7a16ffda29}{KI}}, \mbox{\hyperlink{a00029_ad4f9673d16d231643789f081068d2372}{KD}})
+\begin{DoxyCompactList}\small\item\em Constructor creates an instance of \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} named left\+P\+ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} \mbox{\hyperlink{a00029_a3a6111ebbd586d7b3a0807bcd4072870}{right\+P\+ID}} = \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}}(\&\mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{count\+Right}}, \&\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{count\+Left}}, \&\mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwm\+Right}}, \mbox{\hyperlink{a00029_a0718545586768194f244562b82bdf2b5}{robot\+\_\+speed\+\_\+min}}, \mbox{\hyperlink{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}{robot\+\_\+speed\+\_\+max}}, \mbox{\hyperlink{a00029_aa4729260b732666338dee7d841aa12f3}{KP}}, \mbox{\hyperlink{a00029_ade82752ae1652fdf0df9df7a16ffda29}{KI}}, \mbox{\hyperlink{a00029_ad4f9673d16d231643789f081068d2372}{KD}})
+\begin{DoxyCompactList}\small\item\em Constructor creates an instance of \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} named right\+P\+ID. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}{input\+String}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Carries command instruction string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}
+\begin{DoxyCompactList}\small\item\em Pitch servo motor defined as a \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}
+\begin{DoxyCompactList}\small\item\em Yaw servo motor defined as a \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets everything up. 
+
+Main file. Contains \mbox{\hyperlink{a00029_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} and \mbox{\hyperlink{a00029_afe461d27b9c48d5921c00d521181f12f}{loop()}}. Has all library inclusions, macros, and variables. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00029_a8a460b6555077a64fc97f2e7ef47b843}\label{a00029_a8a460b6555077a64fc97f2e7ef47b843}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!CCW@{CCW}}
+\index{CCW@{CCW}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{CCW}{CCW}}
+{\footnotesize\ttfamily \#define C\+CW~3}
+
+Counterclockwise. An integer used in the decision flow for locomotion. 
+
+Definition at line 105 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_abe61b07c31c2a3e90576eb4c5d95b024}\label{a00029_abe61b07c31c2a3e90576eb4c5d95b024}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!CW@{CW}}
+\index{CW@{CW}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{CW}{CW}}
+{\footnotesize\ttfamily \#define CW~2}
+
+Clockwise. An integer used in the decision flow for locomotion. 
+
+Definition at line 104 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a6f58ca8ab8784a919ec06295ae2d2c3b}\label{a00029_a6f58ca8ab8784a919ec06295ae2d2c3b}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!encoder\_L\_C1@{encoder\_L\_C1}}
+\index{encoder\_L\_C1@{encoder\_L\_C1}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{encoder\_L\_C1}{encoder\_L\_C1}}
+{\footnotesize\ttfamily \#define encoder\+\_\+\+L\+\_\+\+C1~3}
+
+Encoder pin from left motor is connected to Arduino pin 3 
+
+Definition at line 70 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a6d7f13f51cc92dda88d112ad7e78be0f}\label{a00029_a6d7f13f51cc92dda88d112ad7e78be0f}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!encoder\_R\_C1@{encoder\_R\_C1}}
+\index{encoder\_R\_C1@{encoder\_R\_C1}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{encoder\_R\_C1}{encoder\_R\_C1}}
+{\footnotesize\ttfamily \#define encoder\+\_\+\+R\+\_\+\+C1~2}
+
+Encoder pin from right motor is connected to Arduino pin 2 
+
+Definition at line 71 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}\label{a00029_a0b8d5a1a9420c833fda7fe5053e5dc19}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Front@{Front}}
+\index{Front@{Front}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Front}{Front}}
+{\footnotesize\ttfamily \#define Front~1}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 98 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_ad4f9673d16d231643789f081068d2372}\label{a00029_ad4f9673d16d231643789f081068d2372}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!KD@{KD}}
+\index{KD@{KD}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{KD}{KD}}
+{\footnotesize\ttfamily \#define KD~0.\+0001}
+
+Derivative constant for P\+ID 
+
+Definition at line 35 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_ade82752ae1652fdf0df9df7a16ffda29}\label{a00029_ade82752ae1652fdf0df9df7a16ffda29}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!KI@{KI}}
+\index{KI@{KI}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{KI}{KI}}
+{\footnotesize\ttfamily \#define KI~0.\+03}
+
+Integral constant for P\+ID 
+
+Definition at line 34 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_aa4729260b732666338dee7d841aa12f3}\label{a00029_aa4729260b732666338dee7d841aa12f3}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!KP@{KP}}
+\index{KP@{KP}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{KP}{KP}}
+{\footnotesize\ttfamily \#define KP~0.\+012}
+
+Proportional constant for P\+ID
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+Definition at line 33 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a3f4088077127a9c0f58e9e527966c32f}\label{a00029_a3f4088077127a9c0f58e9e527966c32f}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Left@{Left}}
+\index{Left@{Left}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Left}{Left}}
+{\footnotesize\ttfamily \#define Left~4}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 101 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_abdf4dbec227d549c106fdde9ac5f8a71}\label{a00029_abdf4dbec227d549c106fdde9ac5f8a71}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!maxpitchlimit@{maxpitchlimit}}
+\index{maxpitchlimit@{maxpitchlimit}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{maxpitchlimit}{maxpitchlimit}}
+{\footnotesize\ttfamily \#define maxpitchlimit~180}
+
+Maximum angle allowed for servo 
+
+Definition at line 195 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a671041972a6f642b0cb6af0ce54909de}\label{a00029_a671041972a6f642b0cb6af0ce54909de}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!maxyawlimit@{maxyawlimit}}
+\index{maxyawlimit@{maxyawlimit}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{maxyawlimit}{maxyawlimit}}
+{\footnotesize\ttfamily \#define maxyawlimit~180}
+
+Maximum angle allowed for servo 
+
+Definition at line 197 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a18ab8e920d1dca913a9076c5f089fbb2}\label{a00029_a18ab8e920d1dca913a9076c5f089fbb2}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!minpitchlimit@{minpitchlimit}}
+\index{minpitchlimit@{minpitchlimit}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{minpitchlimit}{minpitchlimit}}
+{\footnotesize\ttfamily \#define minpitchlimit~55}
+
+Minimum angle allowed for servo 
+
+Definition at line 196 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_aeec37b2997cce8e574717bb43abeebff}\label{a00029_aeec37b2997cce8e574717bb43abeebff}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!minyawlimit@{minyawlimit}}
+\index{minyawlimit@{minyawlimit}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{minyawlimit}{minyawlimit}}
+{\footnotesize\ttfamily \#define minyawlimit~00}
+
+Minimum angle allowed for servo 
+
+Definition at line 198 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a7df9782fe4d6fd71743442906e5309fc}\label{a00029_a7df9782fe4d6fd71743442906e5309fc}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_ENA@{motor\_ENA}}
+\index{motor\_ENA@{motor\_ENA}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_ENA}{motor\_ENA}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+E\+NA~8}
+
+E\+NA pin of L298N motor driver is connected to Arduino pin 8 
+
+Definition at line 56 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_ad17a728e9698d8a783d5fb1c807bf157}\label{a00029_ad17a728e9698d8a783d5fb1c807bf157}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_ENB@{motor\_ENB}}
+\index{motor\_ENB@{motor\_ENB}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_ENB}{motor\_ENB}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+E\+NB~9}
+
+E\+NB of L298N motor driver is connected to Arduino pin 9 
+
+Definition at line 57 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a06eddde23b0f28eaaec9feda5d5749e3}\label{a00029_a06eddde23b0f28eaaec9feda5d5749e3}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_IN1@{motor\_IN1}}
+\index{motor\_IN1@{motor\_IN1}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_IN1}{motor\_IN1}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+I\+N1~11}
+
+I\+N1 of L298N motor driver is connected to Arduino pin 11 
+
+Definition at line 58 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}\label{a00029_ae088fd5b9d30f211cfa6ab1dd437dd14}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_IN2@{motor\_IN2}}
+\index{motor\_IN2@{motor\_IN2}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_IN2}{motor\_IN2}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+I\+N2~10}
+
+I\+N2 of L298N motor driver is connected to Arduino pin 10 
+
+Definition at line 59 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}\label{a00029_aa4ab5c444d98aa968c8db4c7eb46713f}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_IN3@{motor\_IN3}}
+\index{motor\_IN3@{motor\_IN3}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_IN3}{motor\_IN3}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+I\+N3~12}
+
+I\+N3 of L298N motor driver is connected to Arduino pin 12 
+
+Definition at line 60 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}\label{a00029_a41504a7c8019fd1c3a8e5692fbdb8752}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!motor\_IN4@{motor\_IN4}}
+\index{motor\_IN4@{motor\_IN4}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{motor\_IN4}{motor\_IN4}}
+{\footnotesize\ttfamily \#define motor\+\_\+\+I\+N4~13}
+
+I\+N4 of L298N motor driver is connected to Arduino pin 13 
+
+Definition at line 61 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}\label{a00029_ae61a85e27f9a2f5de9c452eb31694ea9}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Rear@{Rear}}
+\index{Rear@{Rear}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Rear}{Rear}}
+{\footnotesize\ttfamily \#define Rear~2}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 99 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_aa0e2fff3ba3947166baa01fec3e727cf}\label{a00029_aa0e2fff3ba3947166baa01fec3e727cf}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Right@{Right}}
+\index{Right@{Right}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Right}{Right}}
+{\footnotesize\ttfamily \#define Right~3}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 100 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}\label{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!robot\_speed\_max@{robot\_speed\_max}}
+\index{robot\_speed\_max@{robot\_speed\_max}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{robot\_speed\_max}{robot\_speed\_max}}
+{\footnotesize\ttfamily \#define robot\+\_\+speed\+\_\+max~255}
+
+Maximum P\+WM for speed. It can range from 0 to 255. 
+
+Definition at line 21 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a0718545586768194f244562b82bdf2b5}\label{a00029_a0718545586768194f244562b82bdf2b5}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!robot\_speed\_min@{robot\_speed\_min}}
+\index{robot\_speed\_min@{robot\_speed\_min}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{robot\_speed\_min}{robot\_speed\_min}}
+{\footnotesize\ttfamily \#define robot\+\_\+speed\+\_\+min~200}
+
+Minimum P\+WM for speed. It can range from 0 to 255. 
+
+Definition at line 20 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a74cdacd77908bfc691a11ab71cb4daf1}\label{a00029_a74cdacd77908bfc691a11ab71cb4daf1}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!servoPitchCenter@{servoPitchCenter}}
+\index{servoPitchCenter@{servoPitchCenter}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{servoPitchCenter}{servoPitchCenter}}
+{\footnotesize\ttfamily \#define servo\+Pitch\+Center~70}
+
+Central angle in degrees 
+
+Definition at line 193 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a84a53d150aad7e98a603e0ac99d4cebe}\label{a00029_a84a53d150aad7e98a603e0ac99d4cebe}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!servoPitchPin@{servoPitchPin}}
+\index{servoPitchPin@{servoPitchPin}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{servoPitchPin}{servoPitchPin}}
+{\footnotesize\ttfamily \#define servo\+Pitch\+Pin~6}
+
+Servo for pitch movement (nodding of head -\/ like when you indicate yes) of head is connected to Arduino pin 6 ~\newline
+ 
+
+Definition at line 174 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a78518ceb368d41f3307c7f73843e3988}\label{a00029_a78518ceb368d41f3307c7f73843e3988}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!servoYawCenter@{servoYawCenter}}
+\index{servoYawCenter@{servoYawCenter}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{servoYawCenter}{servoYawCenter}}
+{\footnotesize\ttfamily \#define servo\+Yaw\+Center~80}
+
+Central angle in degrees 
+
+Definition at line 194 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a5b0c4ec22bc4adcf6306367bd53bcbdd}\label{a00029_a5b0c4ec22bc4adcf6306367bd53bcbdd}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!servoYawPin@{servoYawPin}}
+\index{servoYawPin@{servoYawPin}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{servoYawPin}{servoYawPin}}
+{\footnotesize\ttfamily \#define servo\+Yaw\+Pin~5}
+
+Servo for yaw movement (shaking of head -\/ like when you indicate no) of head is connected to Arduino pin 5 
+
+Definition at line 175 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a991581d134a6f84d55be043b6e34afd7}\label{a00029_a991581d134a6f84d55be043b6e34afd7}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Start@{Start}}
+\index{Start@{Start}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Start}{Start}}
+{\footnotesize\ttfamily \#define Start~1}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 103 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+\mbox{\Hypertarget{a00029_a24aa6b16345f3a627a8d9452299c2b15}\label{a00029_a24aa6b16345f3a627a8d9452299c2b15}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!Stop@{Stop}}
+\index{Stop@{Stop}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{Stop}{Stop}}
+{\footnotesize\ttfamily \#define Stop~0}
+
+An integer used in the decision flow for locomotion 
+
+Definition at line 102 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{a00029_afe461d27b9c48d5921c00d521181f12f}\label{a00029_afe461d27b9c48d5921c00d521181f12f}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!loop@{loop}}
+\index{loop@{loop}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loops constantly. 
+
+Runs constantly. Nothing is put here because all instructions that Chotu receives are executed at once. There is no need for looping. In addition, when a new command is sent to Chotu, it is through the Serial\+Event function, which works as an interrupt.
+
+Loop can be used during diagnosis or tuning by printing out the locomotion or other statuses. 
+
+Definition at line 247 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247             \{}
+\DoxyCodeLine{248     \textcolor{comment}{//printStatus();}}
+\DoxyCodeLine{249 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{a00029_a4fc01d736fe50cf5b977f755b675f11d}\label{a00029_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!setup@{setup}}
+\index{setup@{setup}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs only once when the robot starts up. 
+
+Sets up everything.
+
+Sets up the P\+ID algorithm. Attaches both \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} objects to their respective servo motor signal pins. Writes initial angles to the servo motors. Begins serial communication for channles 0, 1, and 2. 
+
+Definition at line 227 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227              \{}
+\DoxyCodeLine{228     \mbox{\hyperlink{a00014_a3f03669d18fcaa35fca309f11e06c84a}{PID\_initial}}();}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.attach(\mbox{\hyperlink{a00029_a84a53d150aad7e98a603e0ac99d4cebe}{servoPitchPin}});}
+\DoxyCodeLine{231     \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.attach(\mbox{\hyperlink{a00029_a5b0c4ec22bc4adcf6306367bd53bcbdd}{servoYawPin}});}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     \mbox{\hyperlink{a00029_acc5f94c75c3f82441482973e64e784f4}{pitchservo}}.write(45, 100);}
+\DoxyCodeLine{234     \mbox{\hyperlink{a00029_ad864b28b1979578ace9465523153ec0b}{yawservo}}.write(45, 100);}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     Serial.begin(9600);}
+\DoxyCodeLine{237     Serial1.begin(9600);}
+\DoxyCodeLine{238     Serial2.begin(9600);}
+\DoxyCodeLine{239 \}}
+
+\end{DoxyCode}
+
+
+References P\+I\+D\+\_\+initial(), pitchservo, servo\+Pitch\+Pin, servo\+Yaw\+Pin, and yawservo.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{a00029_a04ae96d33732cf401f12b29cb1850602}\label{a00029_a04ae96d33732cf401f12b29cb1850602}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!countLeft@{countLeft}}
+\index{countLeft@{countLeft}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{countLeft}{countLeft}}
+{\footnotesize\ttfamily double count\+Left = 0}
+
+
+
+Integer to keep count of encoder signals from the left motor. 
+
+
+
+Definition at line 110 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by encoder\+Left(), encoder\+Right(), print\+Status(), and stop\+Motion().
+
+\mbox{\Hypertarget{a00029_a701d54ec541452cd328900e23eb4359d}\label{a00029_a701d54ec541452cd328900e23eb4359d}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!countRight@{countRight}}
+\index{countRight@{countRight}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{countRight}{countRight}}
+{\footnotesize\ttfamily double count\+Right = 0}
+
+
+
+Integer to keep count of encoder signals from the right motor. 
+
+
+
+Definition at line 115 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by encoder\+Left(), encoder\+Right(), print\+Status(), and stop\+Motion().
+
+\mbox{\Hypertarget{a00029_aec3002d20ea3109416d8345a0f0dd2dc}\label{a00029_aec3002d20ea3109416d8345a0f0dd2dc}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!currentMotion@{currentMotion}}
+\index{currentMotion@{currentMotion}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{currentMotion}{currentMotion}}
+{\footnotesize\ttfamily int current\+Motion = 0}
+
+
+
+Integer to contain the present state of locomotion. 
+
+
+
+Definition at line 140 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by move\+Direction(), print\+Status(), and stop\+Motion().
+
+\mbox{\Hypertarget{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}\label{a00029_abfa7bc4032f1ef9070aa48a183f30d4a}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!inputString@{inputString}}
+\index{inputString@{inputString}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{inputString}{inputString}}
+{\footnotesize\ttfamily String input\+String = \char`\"{}\char`\"{}}
+
+
+
+Carries command instruction string. 
+
+Starts out empty. 
+
+Definition at line 165 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by decider(), serial\+Event(), and serial\+Event2().
+
+\mbox{\Hypertarget{a00029_a1706bf6cbdcb567626089276b658bcb0}\label{a00029_a1706bf6cbdcb567626089276b658bcb0}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!leftPID@{leftPID}}
+\index{leftPID@{leftPID}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{leftPID}{leftPID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} left\+P\+ID = \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}}(\&\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{count\+Left}}, \&\mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{count\+Right}}, \&\mbox{\hyperlink{a00029_a757c99671b9141bca8a6c23415b09493}{pwm\+Left}}, \mbox{\hyperlink{a00029_a0718545586768194f244562b82bdf2b5}{robot\+\_\+speed\+\_\+min}}, \mbox{\hyperlink{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}{robot\+\_\+speed\+\_\+max}}, \mbox{\hyperlink{a00029_aa4729260b732666338dee7d841aa12f3}{KP}}, \mbox{\hyperlink{a00029_ade82752ae1652fdf0df9df7a16ffda29}{KI}}, \mbox{\hyperlink{a00029_ad4f9673d16d231643789f081068d2372}{KD}})}
+
+
+
+Constructor creates an instance of \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} named left\+P\+ID. 
+
+Applies P\+ID algorithm to left motor. 
+\begin{DoxyParams}{Parameters}
+{\em count\+Left} & Process Variable \\
+\hline
+{\em count\+Right} & Set Point \\
+\hline
+{\em pwm\+Left} & Manipulated Value \\
+\hline
+{\em robot\+\_\+speed\+\_\+min} & The minimum value \\
+\hline
+{\em robot\+\_\+speed\+\_\+max} & The maximum value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by move\+Direction(), and P\+I\+D\+\_\+initial().
+
+\mbox{\Hypertarget{a00029_acc5f94c75c3f82441482973e64e784f4}\label{a00029_acc5f94c75c3f82441482973e64e784f4}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!pitchservo@{pitchservo}}
+\index{pitchservo@{pitchservo}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{pitchservo}{pitchservo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} pitchservo}
+
+
+
+Pitch servo motor defined as a \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} object. 
+
+
+
+Definition at line 209 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by head\+Motion\+\_\+predefined(), movehead(), and setup().
+
+\mbox{\Hypertarget{a00029_a757c99671b9141bca8a6c23415b09493}\label{a00029_a757c99671b9141bca8a6c23415b09493}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!pwmLeft@{pwmLeft}}
+\index{pwmLeft@{pwmLeft}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{pwmLeft}{pwmLeft}}
+{\footnotesize\ttfamily double pwm\+Left}
+
+
+
+P\+WM output for left motor. 
+
+
+
+Definition at line 130 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by move\+Direction(), and print\+Status().
+
+\mbox{\Hypertarget{a00029_a83694b9c65098c2ac304cd69929e5ede}\label{a00029_a83694b9c65098c2ac304cd69929e5ede}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!pwmRight@{pwmRight}}
+\index{pwmRight@{pwmRight}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{pwmRight}{pwmRight}}
+{\footnotesize\ttfamily double pwm\+Right}
+
+
+
+P\+WM output for right motor. 
+
+
+
+Definition at line 135 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by move\+Direction(), and print\+Status().
+
+\mbox{\Hypertarget{a00029_a3a6111ebbd586d7b3a0807bcd4072870}\label{a00029_a3a6111ebbd586d7b3a0807bcd4072870}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!rightPID@{rightPID}}
+\index{rightPID@{rightPID}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{rightPID}{rightPID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} right\+P\+ID = \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}}(\&\mbox{\hyperlink{a00029_a701d54ec541452cd328900e23eb4359d}{count\+Right}}, \&\mbox{\hyperlink{a00029_a04ae96d33732cf401f12b29cb1850602}{count\+Left}}, \&\mbox{\hyperlink{a00029_a83694b9c65098c2ac304cd69929e5ede}{pwm\+Right}}, \mbox{\hyperlink{a00029_a0718545586768194f244562b82bdf2b5}{robot\+\_\+speed\+\_\+min}}, \mbox{\hyperlink{a00029_a6f0dc250f555f4ef7640ea8433c7a50f}{robot\+\_\+speed\+\_\+max}}, \mbox{\hyperlink{a00029_aa4729260b732666338dee7d841aa12f3}{KP}}, \mbox{\hyperlink{a00029_ade82752ae1652fdf0df9df7a16ffda29}{KI}}, \mbox{\hyperlink{a00029_ad4f9673d16d231643789f081068d2372}{KD}})}
+
+
+
+Constructor creates an instance of \mbox{\hyperlink{a00001_d7/d21/a00584}{Auto\+P\+ID}} named right\+P\+ID. 
+
+Applies P\+ID algorithm to right motor. 
+\begin{DoxyParams}{Parameters}
+{\em count\+Right} & Process Variable \\
+\hline
+{\em count\+Left} & Set Point \\
+\hline
+{\em pwm\+Right} & Manipulated Value \\
+\hline
+{\em robot\+\_\+speed\+\_\+min} & The minimum value \\
+\hline
+{\em robot\+\_\+speed\+\_\+max} & The maximum value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by move\+Direction(), and P\+I\+D\+\_\+initial().
+
+\mbox{\Hypertarget{a00029_a57ae21281c6035a6e05bad5e2a40143d}\label{a00029_a57ae21281c6035a6e05bad5e2a40143d}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!stepsMotion@{stepsMotion}}
+\index{stepsMotion@{stepsMotion}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{stepsMotion}{stepsMotion}}
+{\footnotesize\ttfamily double steps\+Motion = 0}
+
+
+
+Don\textquotesingle{}t remember. 
+
+
+
+Definition at line 125 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by decider(), move\+Direction(), and print\+Status().
+
+\mbox{\Hypertarget{a00029_a46041ff7beea84e89562bb32ef694618}\label{a00029_a46041ff7beea84e89562bb32ef694618}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!stepsOverall@{stepsOverall}}
+\index{stepsOverall@{stepsOverall}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{stepsOverall}{stepsOverall}}
+{\footnotesize\ttfamily double steps\+Overall = 0}
+
+
+
+Integer to keep an average count of encoder signals from the both motors. 
+
+
+
+Definition at line 120 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by decider(), encoder\+Left(), encoder\+Right(), move\+Direction(), and print\+Status().
+
+\mbox{\Hypertarget{a00029_ad864b28b1979578ace9465523153ec0b}\label{a00029_ad864b28b1979578ace9465523153ec0b}} 
+\index{TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}!yawservo@{yawservo}}
+\index{yawservo@{yawservo}!TDF02-\/145\_Arduino.ino@{TDF02-\/145\_Arduino.ino}}
+\doxysubsubsection{\texorpdfstring{yawservo}{yawservo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} yawservo}
+
+
+
+Yaw servo motor defined as a \mbox{\hyperlink{a00001_d8/d2e/a00588}{Var\+Speed\+Servo}} object. 
+
+
+
+Definition at line 214 of file T\+D\+F02-\/145\+\_\+\+Arduino.\+ino.
+
+
+
+Referenced by head\+Motion\+\_\+predefined(), movehead(), and setup().
+

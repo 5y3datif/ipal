@@ -1,0 +1,330 @@
+\hypertarget{a00590}{}\doxysection{Auto\+P\+ID Class Reference}
+\label{a00590}\index{AutoPID@{AutoPID}}
+
+
+Library by R. Downing.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Auto\+P\+I\+D.\+h\char`\"{}}
+
+Inheritance diagram for Auto\+P\+ID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/db1/a00590}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00590_a4a74dbc3778f5222a595eabd5662c5d7}{Auto\+P\+ID}} (double $\ast$input, double $\ast$setpoint, double $\ast$output, double output\+Min, double output\+Max, double Kp, double Ki, double Kd)
+\item 
+void \mbox{\hyperlink{a00590_afda575c183da7f128b233cce8e5b2d30}{set\+Gains}} (double Kp, double Ki, double Kd)
+\item 
+void \mbox{\hyperlink{a00590_acae3f5a3aa072a5e2668858c8f7a7011}{set\+Bang\+Bang}} (double bang\+On, double bang\+Off)
+\item 
+void \mbox{\hyperlink{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}{set\+Bang\+Bang}} (double bang\+Range)
+\item 
+void \mbox{\hyperlink{a00590_a74f3336efbc6d0e12309ccbfd20c2811}{set\+Output\+Range}} (double output\+Min, double output\+Max)
+\item 
+void \mbox{\hyperlink{a00590_aa05d681cf2af2ea060582fdaf4103c8a}{set\+Time\+Step}} (unsigned long time\+Step)
+\item 
+bool \mbox{\hyperlink{a00590_a706360a08d384e5b6269b58820c0c20a}{at\+Set\+Point}} (double threshold)
+\item 
+void \mbox{\hyperlink{a00590_a13a43e6d814de94978c515cb084873b1}{run}} ()
+\item 
+void \mbox{\hyperlink{a00590_a8c528baf37154d347366083f0f816846}{stop}} ()
+\item 
+void \mbox{\hyperlink{a00590_ad20897c5c8bd47f5d4005989bead0e55}{reset}} ()
+\item 
+bool \mbox{\hyperlink{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}{is\+Stopped}} ()
+\item 
+double \mbox{\hyperlink{a00590_a1572da0a0c86b3a001f215c13b891341}{get\+Integral}} ()
+\item 
+void \mbox{\hyperlink{a00590_a170955b89c0bf4ae1de1548bca6f6443}{set\+Integral}} (double integral)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{a00590_a240d428b23bc549c30e331aae9553a10}{\+\_\+\+Kp}}
+\item 
+double \mbox{\hyperlink{a00590_a785566f7f2b2b52eacef6be323d8f854}{\+\_\+\+Ki}}
+\item 
+double \mbox{\hyperlink{a00590_a06e5c770c8e0d5d168258553a0c0f144}{\+\_\+\+Kd}}
+\item 
+double \mbox{\hyperlink{a00590_aef24901bb53885fb4eab2e7d808be5ea}{\+\_\+integral}}
+\item 
+double \mbox{\hyperlink{a00590_a2ce390cfbc2f2773de54dc8434a72580}{\+\_\+previous\+Error}}
+\item 
+double \mbox{\hyperlink{a00590_ac2192cea431b6991262250fec213d0ce}{\+\_\+bang\+On}}
+\item 
+double \mbox{\hyperlink{a00590_a0edb99c535e183999c37294d47375267}{\+\_\+bang\+Off}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_aec2237392c78d482fb0d599ccc636bf7}{\+\_\+input}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_a74a573f57cb7183f23b6edcb718f29ee}{\+\_\+setpoint}}
+\item 
+double $\ast$ \mbox{\hyperlink{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}{\+\_\+output}}
+\item 
+double \mbox{\hyperlink{a00590_a6d7528447f4ed66d4c59846585ce45ef}{\+\_\+output\+Min}}
+\item 
+double \mbox{\hyperlink{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}{\+\_\+output\+Max}}
+\item 
+unsigned long \mbox{\hyperlink{a00590_a555ba19986039eefa217b0157f605cd5}{\+\_\+time\+Step}}
+\item 
+unsigned long \mbox{\hyperlink{a00590_a67426d20d93bf8233cc3e47c91fda5aa}{\+\_\+last\+Step}}
+\item 
+bool \mbox{\hyperlink{a00590_a6c3cac28822b98b8a0861af6ecf71230}{\+\_\+stopped}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Library by R. Downing. 
+
+Used this library to quickly run P\+ID 
+
+Definition at line 5 of file Auto\+P\+I\+D.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a00590_a4a74dbc3778f5222a595eabd5662c5d7}\label{a00590_a4a74dbc3778f5222a595eabd5662c5d7}} 
+\index{AutoPID@{AutoPID}!AutoPID@{AutoPID}}
+\index{AutoPID@{AutoPID}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{AutoPID()}{AutoPID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00590}{Auto\+P\+ID}} (\begin{DoxyParamCaption}\item[{double $\ast$}]{input,  }\item[{double $\ast$}]{setpoint,  }\item[{double $\ast$}]{output,  }\item[{double}]{output\+Min,  }\item[{double}]{output\+Max,  }\item[{double}]{Kp,  }\item[{double}]{Ki,  }\item[{double}]{Kd }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00590_a706360a08d384e5b6269b58820c0c20a}\label{a00590_a706360a08d384e5b6269b58820c0c20a}} 
+\index{AutoPID@{AutoPID}!atSetPoint@{atSetPoint}}
+\index{atSetPoint@{atSetPoint}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{atSetPoint()}{atSetPoint()}}
+{\footnotesize\ttfamily bool at\+Set\+Point (\begin{DoxyParamCaption}\item[{double}]{threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a1572da0a0c86b3a001f215c13b891341}\label{a00590_a1572da0a0c86b3a001f215c13b891341}} 
+\index{AutoPID@{AutoPID}!getIntegral@{getIntegral}}
+\index{getIntegral@{getIntegral}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{getIntegral()}{getIntegral()}}
+{\footnotesize\ttfamily double get\+Integral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}\label{a00590_a2fc5ff4f369aaa46c55c3ad3c63216d6}} 
+\index{AutoPID@{AutoPID}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{isStopped()}{isStopped()}}
+{\footnotesize\ttfamily bool is\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_ad20897c5c8bd47f5d4005989bead0e55}\label{a00590_ad20897c5c8bd47f5d4005989bead0e55}} 
+\index{AutoPID@{AutoPID}!reset@{reset}}
+\index{reset@{reset}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a13a43e6d814de94978c515cb084873b1}\label{a00590_a13a43e6d814de94978c515cb084873b1}} 
+\index{AutoPID@{AutoPID}!run@{run}}
+\index{run@{run}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_acae3f5a3aa072a5e2668858c8f7a7011}\label{a00590_acae3f5a3aa072a5e2668858c8f7a7011}} 
+\index{AutoPID@{AutoPID}!setBangBang@{setBangBang}}
+\index{setBangBang@{setBangBang}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setBangBang()}{setBangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void set\+Bang\+Bang (\begin{DoxyParamCaption}\item[{double}]{bang\+On,  }\item[{double}]{bang\+Off }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}\label{a00590_a894a24d6ba9c5f89a11171eae9dfdb3e}} 
+\index{AutoPID@{AutoPID}!setBangBang@{setBangBang}}
+\index{setBangBang@{setBangBang}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setBangBang()}{setBangBang()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void set\+Bang\+Bang (\begin{DoxyParamCaption}\item[{double}]{bang\+Range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_afda575c183da7f128b233cce8e5b2d30}\label{a00590_afda575c183da7f128b233cce8e5b2d30}} 
+\index{AutoPID@{AutoPID}!setGains@{setGains}}
+\index{setGains@{setGains}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setGains()}{setGains()}}
+{\footnotesize\ttfamily void set\+Gains (\begin{DoxyParamCaption}\item[{double}]{Kp,  }\item[{double}]{Ki,  }\item[{double}]{Kd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a170955b89c0bf4ae1de1548bca6f6443}\label{a00590_a170955b89c0bf4ae1de1548bca6f6443}} 
+\index{AutoPID@{AutoPID}!setIntegral@{setIntegral}}
+\index{setIntegral@{setIntegral}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setIntegral()}{setIntegral()}}
+{\footnotesize\ttfamily void set\+Integral (\begin{DoxyParamCaption}\item[{double}]{integral }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a74f3336efbc6d0e12309ccbfd20c2811}\label{a00590_a74f3336efbc6d0e12309ccbfd20c2811}} 
+\index{AutoPID@{AutoPID}!setOutputRange@{setOutputRange}}
+\index{setOutputRange@{setOutputRange}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setOutputRange()}{setOutputRange()}}
+{\footnotesize\ttfamily void set\+Output\+Range (\begin{DoxyParamCaption}\item[{double}]{output\+Min,  }\item[{double}]{output\+Max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_aa05d681cf2af2ea060582fdaf4103c8a}\label{a00590_aa05d681cf2af2ea060582fdaf4103c8a}} 
+\index{AutoPID@{AutoPID}!setTimeStep@{setTimeStep}}
+\index{setTimeStep@{setTimeStep}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{setTimeStep()}{setTimeStep()}}
+{\footnotesize\ttfamily void set\+Time\+Step (\begin{DoxyParamCaption}\item[{unsigned long}]{time\+Step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00590_a8c528baf37154d347366083f0f816846}\label{a00590_a8c528baf37154d347366083f0f816846}} 
+\index{AutoPID@{AutoPID}!stop@{stop}}
+\index{stop@{stop}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{a00590_a0edb99c535e183999c37294d47375267}\label{a00590_a0edb99c535e183999c37294d47375267}} 
+\index{AutoPID@{AutoPID}!\_bangOff@{\_bangOff}}
+\index{\_bangOff@{\_bangOff}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_bangOff}{\_bangOff}}
+{\footnotesize\ttfamily double \+\_\+bang\+Off\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_ac2192cea431b6991262250fec213d0ce}\label{a00590_ac2192cea431b6991262250fec213d0ce}} 
+\index{AutoPID@{AutoPID}!\_bangOn@{\_bangOn}}
+\index{\_bangOn@{\_bangOn}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_bangOn}{\_bangOn}}
+{\footnotesize\ttfamily double \+\_\+bang\+On\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aec2237392c78d482fb0d599ccc636bf7}\label{a00590_aec2237392c78d482fb0d599ccc636bf7}} 
+\index{AutoPID@{AutoPID}!\_input@{\_input}}
+\index{\_input@{\_input}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_input}{\_input}}
+{\footnotesize\ttfamily double$\ast$ \+\_\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aef24901bb53885fb4eab2e7d808be5ea}\label{a00590_aef24901bb53885fb4eab2e7d808be5ea}} 
+\index{AutoPID@{AutoPID}!\_integral@{\_integral}}
+\index{\_integral@{\_integral}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_integral}{\_integral}}
+{\footnotesize\ttfamily double \+\_\+integral\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a06e5c770c8e0d5d168258553a0c0f144}\label{a00590_a06e5c770c8e0d5d168258553a0c0f144}} 
+\index{AutoPID@{AutoPID}!\_Kd@{\_Kd}}
+\index{\_Kd@{\_Kd}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_Kd}{\_Kd}}
+{\footnotesize\ttfamily double \+\_\+\+Kd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a785566f7f2b2b52eacef6be323d8f854}\label{a00590_a785566f7f2b2b52eacef6be323d8f854}} 
+\index{AutoPID@{AutoPID}!\_Ki@{\_Ki}}
+\index{\_Ki@{\_Ki}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_Ki}{\_Ki}}
+{\footnotesize\ttfamily double \+\_\+\+Ki\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a240d428b23bc549c30e331aae9553a10}\label{a00590_a240d428b23bc549c30e331aae9553a10}} 
+\index{AutoPID@{AutoPID}!\_Kp@{\_Kp}}
+\index{\_Kp@{\_Kp}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_Kp}{\_Kp}}
+{\footnotesize\ttfamily double \+\_\+\+Kp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a67426d20d93bf8233cc3e47c91fda5aa}\label{a00590_a67426d20d93bf8233cc3e47c91fda5aa}} 
+\index{AutoPID@{AutoPID}!\_lastStep@{\_lastStep}}
+\index{\_lastStep@{\_lastStep}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_lastStep}{\_lastStep}}
+{\footnotesize\ttfamily unsigned long \+\_\+last\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}\label{a00590_aa2eecb8450976ca1a3b5271be3cfb8c1}} 
+\index{AutoPID@{AutoPID}!\_output@{\_output}}
+\index{\_output@{\_output}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_output}{\_output}}
+{\footnotesize\ttfamily double $\ast$ \+\_\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}\label{a00590_ad5090f4c725f1fa9ec8574b0657dc2b6}} 
+\index{AutoPID@{AutoPID}!\_outputMax@{\_outputMax}}
+\index{\_outputMax@{\_outputMax}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_outputMax}{\_outputMax}}
+{\footnotesize\ttfamily double \+\_\+output\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a6d7528447f4ed66d4c59846585ce45ef}\label{a00590_a6d7528447f4ed66d4c59846585ce45ef}} 
+\index{AutoPID@{AutoPID}!\_outputMin@{\_outputMin}}
+\index{\_outputMin@{\_outputMin}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_outputMin}{\_outputMin}}
+{\footnotesize\ttfamily double \+\_\+output\+Min\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a2ce390cfbc2f2773de54dc8434a72580}\label{a00590_a2ce390cfbc2f2773de54dc8434a72580}} 
+\index{AutoPID@{AutoPID}!\_previousError@{\_previousError}}
+\index{\_previousError@{\_previousError}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_previousError}{\_previousError}}
+{\footnotesize\ttfamily double \+\_\+previous\+Error\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a74a573f57cb7183f23b6edcb718f29ee}\label{a00590_a74a573f57cb7183f23b6edcb718f29ee}} 
+\index{AutoPID@{AutoPID}!\_setpoint@{\_setpoint}}
+\index{\_setpoint@{\_setpoint}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_setpoint}{\_setpoint}}
+{\footnotesize\ttfamily double $\ast$ \+\_\+setpoint\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a6c3cac28822b98b8a0861af6ecf71230}\label{a00590_a6c3cac28822b98b8a0861af6ecf71230}} 
+\index{AutoPID@{AutoPID}!\_stopped@{\_stopped}}
+\index{\_stopped@{\_stopped}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_stopped}{\_stopped}}
+{\footnotesize\ttfamily bool \+\_\+stopped\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Auto\+P\+I\+D.\+h.
+
+\mbox{\Hypertarget{a00590_a555ba19986039eefa217b0157f605cd5}\label{a00590_a555ba19986039eefa217b0157f605cd5}} 
+\index{AutoPID@{AutoPID}!\_timeStep@{\_timeStep}}
+\index{\_timeStep@{\_timeStep}!AutoPID@{AutoPID}}
+\doxysubsubsection{\texorpdfstring{\_timeStep}{\_timeStep}}
+{\footnotesize\ttfamily unsigned long \+\_\+time\+Step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file Auto\+P\+I\+D.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00002}{Auto\+P\+I\+D.\+h}}\end{DoxyCompactItemize}
