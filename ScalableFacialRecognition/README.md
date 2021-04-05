@@ -1,6 +1,6 @@
 "Scalable Facial Recognition For Security Survillence" is part of several differenct AI services that will be designed under
 
-"National Center in Big Data and Cloud Computing (NCBC)" grant and will be deployed OpenStack Cloud.
+"National Center in Big Data and Cloud Computing (NCBC)" grant and will be deployed on OpenStack Cloud.
 
 Project Title: Hetro-Cloud
 
